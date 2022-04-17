@@ -22,18 +22,19 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 5        | Virtual Studio Code Extensions | ✔️ |
 | 6        | Main Technologies Overview     | ✔️ |
 
-| Modulo 1 | Checkout                        | ❌ |
-|----------|---------------------------------|---|
-| 1        | Module Overview                 | ✔️ |
-| 2        | Figma Introduction              | ✔️ |
-| 3        | Figma Basics                    | ✔️ |
-| 4        | Github Introduction             | ✔️ |
-| 5        | Github Project Dashboard        | ✔️ |
-| 6        | Wireframe                       | ✔️ |
-| 7        | Improving Wireframe             | ✔️ |
-| 8        | Final Design                    | ✔️ |
-| 9        | Updating Github Issue           | ✔️ |
-| 10       | Setup Project and Git           | ✔️ |
-| 11       | Setup TailwindCSS               | ✔️ |
-| 11       | SVG, Icons and Blade Components | ✔️ |
-| 11       | Navigation Menu                 | ✔️ |
+| Modulo 1 | Checkout                             | ❌ |
+|----------|--------------------------------------|---|
+| 1        | Module Overview                      | ✔️ |
+| 2        | Figma Introduction                   | ✔️ |
+| 3        | Figma Basics                         | ✔️ |
+| 4        | Github Introduction                  | ✔️ |
+| 5        | Github Project Dashboard             | ✔️ |
+| 6        | Wireframe                            | ✔️ |
+| 7        | Improving Wireframe                  | ✔️ |
+| 8        | Final Design                         | ✔️ |
+| 9        | Updating Github Issue                | ✔️ |
+| 10       | Setup Project and Git                | ✔️ |
+| 11       | Setup TailwindCSS                    | ✔️ |
+| 11       | SVG, Icons and Blade Components      | ✔️ |
+| 11       | Navigation Menu                      | ✔️ |
+| 11       | Static Contact Info Checkout Section | ✔️ |
