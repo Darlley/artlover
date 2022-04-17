@@ -36,3 +36,4 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 10       | Setup Project and Git           | ✔️ |
 | 11       | Setup TailwindCSS               | ✔️ |
 | 11       | SVG, Icons and Blade Components | ✔️ |
+| 11       | Navigation Menu                 | ✔️ |
