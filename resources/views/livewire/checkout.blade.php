@@ -1,17 +1,239 @@
-<div class="w-6xl mx-auto">
-    <h1 class="text-3xl text-gray-700 uppercase font-bold mb-10 mt-20">Checkout</h1>
+<div>
+    <h1 class="text-3xl text-secundary-700 uppercase font-bold mb-10 mt-20">Checkout</h1>
 
-    <main class="flex space-x-14">
-        <div class="w-2/3">
+    <div class="flex flex-col-reverse lg:flex-row lg:space-x-14 lg:gap-0 gap-4">
+        <div class="w-full lg:w-2/3">
             <div class="bg-white rounded-lg p-8 space-y-4">
-                <h3 class="text-xl font-bold text-gray-700 flex justify-between items-center mb-2">
-                    Contact information
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-secundary-600">
+                        Contact information
+                    </h3>
                     <x-icon.user-circle class="w-8 h-8" />
-                </h3>
+                </div>
 
-                <x-jet-input type="text" name="input" class="w-full" placeholder="Name" />
+                <div class="space-y-4">
+                    <x-jet-label for="name" value="Nome" />
+                    <x-jet-input type="text" name="input" id="name" placeholder="Name" />
+                    <x-jet-label for="email" value="Email" />
+                    <x-jet-input type="email" name="email" id="email" placeholder="Email" />
+                </div>
+                
+                <div class="flex justify-between">
+                    <div class="space-y-2 ">
+                        <x-jet-dropdown align="left" width="60">
+                            <x-slot name="trigger">
+                                <span class="inline-flex rounded-md">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-secundary-300 bg-white hover:bg-secundary-50 hover:text-secundary-700 focus:outline-none focus:bg-secundary-50 active:bg-secundary-50 transition">
+                                        {{ __('City') }}
+
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <div class="w-60">
+                                    <!-- City -->
+                                    <div class="block px-4 py-2 text-xs text-secundary-300">
+                                        {{ __('City') }}
+                                    </div>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('São Paulo') }}
+                                    </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('Rio de Janeiro') }}
+                                    </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('Campo Grande') }}
+                                    </x-jet-dropdown-link>
+
+                                </div>
+                            </x-slot>
+                        </x-jet-dropdown>
+                    </div>
+                    <div class="space-y-2 ">
+                        <x-jet-dropdown align="right" width="60">
+                            <x-slot name="trigger">
+                                <span class="inline-flex rounded-md">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-secundary-300 bg-white hover:bg-secundary-50 hover:text-secundary-700 focus:outline-none focus:bg-secundary-50 active:bg-secundary-50 transition">
+                                        {{ __('State') }}
+
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <div class="w-60">
+                                    <!-- State -->
+                                    <div class="block px-4 py-2 text-xs text-secundary-300">
+                                        {{ __('State') }}
+                                    </div>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('São Paulo') }}
+                                    </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('Rio de Janeiro') }}
+                                    </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('Mato Grosso do Sul') }}
+                                    </x-jet-dropdown-link>
+                                </div>
+                            </x-slot>
+                        </x-jet-dropdown>
+                    </div>
+                    <div class="space-y-2 ">
+                        <x-jet-dropdown align="right" width="60">
+                            <x-slot name="trigger">
+                                <span class="inline-flex rounded-md">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-secundary-300 bg-white hover:bg-secundary-50 hover:text-secundary-700 focus:outline-none focus:bg-secundary-50 active:bg-secundary-50 transition">
+                                        {{ __('Country') }}
+
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <div class="w-60">
+                                    <!-- Country -->
+                                    <div class="block px-4 py-2 text-xs text-secundary-300">
+                                        {{ __('Country') }}
+                                    </div>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('Brazil') }}
+                                    </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        {{ __('United States') }}
+                                    </x-jet-dropdown-link>
+
+                                </div>
+                            </x-slot>
+                        </x-jet-dropdown>
+                    </div>
+                </div>
+
+                <x-jet-label for="zipcode" value="Zipcode" />
+                <x-jet-input type="text" name="zipcode" id="zipcode" placeholder="Zip Code" />
+            
+                <x-jet-label for="address1" value="Address Line 1" />
+                <x-jet-input type="text" name="input" id="address1" placeholder="Address Line 1" />
+
+                <x-jet-label for="address2" value="Address Line 2" />
+                <x-jet-input type="text" name="input" id="address2" placeholder="Address Line 2" />
+
+                <div class="flex items-center justify-between text-secundary-300">
+                    <span>Save this address as default?</span>
+
+                    <div class="container-checkbox">
+                        <label>
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+                        <style>
+                            .container-checkbox{
+                            justify-content: center;
+                            font-family: Arial;
+                            display: flex;
+                            }
+
+                            .container-checkbox label{
+                            margin-right: 20px;
+                            display: flex;
+                            align-items: center;
+                            }
+
+                            .container-checkbox input[type="checkbox"]{
+                            margin: 0;
+                            visibility: hidden;
+                            }
+
+                            .container-checkbox input[type="checkbox"]:checked + span{
+                            background-color: #6366f1;
+                            }
+
+                            .container-checkbox input[type="checkbox"]:checked + span:After{
+                            left: 22px;
+                            }
+
+                            .container-checkbox span{
+                            background-color: #ddd;
+                            display: inline-block;
+                            border-radius: 10px;
+                            transition: all .2s;
+                            position: relative;
+                            margin-right: 5px;
+                            height: 20px;
+                            width: 40px;
+                            }
+
+                            .container-checkbox span:after{
+                            background-color: white;
+                            display: inline-block;
+                            position: absolute;
+                            transition: all .2s;
+                            border-radius: 50%;
+                            height: 16px;
+                            content: '';
+                            width: 16px;
+                            left: 3px;
+                            top: 2px;
+                            }
+
+                            .container-checkbox span:hover:after{
+                            cursor: pointer;
+                            }
+                        </style>
+                    </div>
+
+                </div>
+
             </div>
         </div>
-        <div class="w-1/3">Resume</div>
-    </main>
+
+        <div class="w-full lg:w-1/3">
+            <div class="bg-white rounded-lg p-8 space-y-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-secundary-600">
+                        Resume checkout
+                    </h3>
+                    <x-icon.shopping-bag class="w-8 h-8" />
+                </div>
+
+                <div class="space-y-4 text-sm font-normal text-secundary-400">
+                    <div class="flex justify-between">
+                        <span>2 products</span>
+                        <span>$ 1,280.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>2 products</span>
+                        <span>$ 1,280.00</span>
+                    </div>
+                    <div class="flex justify-between font-bold">
+                        <span>Total</span>
+                        <span>$ 1,280.00</span>
+                    </div>
+                </div>
+
+                <x-jet-button class="gap-4 font-bold">
+                    <span>Finish checkout</span>
+                    <x-icon.check class="w-6 h-6" />
+                </x-jet-button>
+            </div>
+        </div>
+    </div>
 </div>
