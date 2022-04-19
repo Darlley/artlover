@@ -35,7 +35,10 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 9        | Updating Github Issue                 | ✔️ |
 | 10       | Setup Project and Git                 | ✔️ |
 | 11       | Setup TailwindCSS                     | ✔️ |
-| 11       | SVG, Icons and Blade Components       | ✔️ |
-| 11       | Navigation Menu                       | ✔️ |
-| 11       | Creating Our First Livewire Component | ✔️ |
-| 11       | Static Contact Info Checkout Section  | ✔️ |
+| 12       | SVG, Icons and Blade Components       | ✔️ |
+| 13       | Navigation Menu                       | ✔️ |
+| 14       | Creating Our First Livewire Component | ✔️ |
+| 15       | Static Contact Info Checkout Section  | ✔️ |
+| 16       | Quick Changes to Contacts Section     | ✔️ |
+| 17       | DRY and Top-Down Development          | ✔️ |
+| 18       | Static Shipping and Payment           | ✔️ |
