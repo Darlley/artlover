@@ -3,7 +3,7 @@
         <h3 class="text-xl font-bold text-secundary-600">
             {{ $title }}
         </h3>
-        <x-dynamic-component :component=" 'icon.' . $icon" class="w-8 h-8" />
+        <x-dynamic-component :component="'icon.' . $icon" class="w-8 h-8" />
     </div>
 
     <div class="space-y-4">

@@ -1,0 +1,66 @@
+.container-checkbox {
+    @apply
+
+    flex
+    justify-center
+}
+
+.container-checkbox label {
+    @apply
+
+    flex
+    items-center
+}
+
+.container-checkbox input[type="checkbox"] {
+    @apply
+
+    m-0
+    hidden
+}
+
+.container-checkbox input[type="checkbox"]:checked+span {
+    @apply
+
+    bg-indigo-500
+}
+
+.container-checkbox input[type="checkbox"]:checked+span:after {
+    @apply
+
+    left-5
+}
+
+.container-checkbox span {
+    @apply
+
+    bg-black
+    inline-block
+    
+    rounded-xl
+    transition-all
+    duration-200
+    relative
+    h-5
+    w-10
+
+    after:inline-block
+    after:content-['']
+    after:absolute
+    after:left-1
+    after:h-4
+    after:w-4
+    after:bg-white
+    after:rounded-full
+    after:transition-all
+    after:duration-200
+}
+.container-checkbox span:after {
+    top: 3px;
+}
+
+.container-checkbox span:hover:after {
+    @apply
+
+    cursor-pointer
+}

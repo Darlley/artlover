@@ -42,3 +42,6 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 16       | Quick Changes to Contacts Section     | ✔️ |
 | 17       | DRY and Top-Down Development          | ✔️ |
 | 18       | Static Shipping and Payment           | ✔️ |
+| 19       | Static Shipping checkout Section      | ✔️ |
+| 20       | Static Payment checkout Section       | ✔️ |
+| 21       | Switch Component With Alpinejs        | ✔️ |

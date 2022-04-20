@@ -133,13 +133,9 @@
                 <x-jet-input type="text" name="input" id="address2" placeholder="Address Line 2" />
 
                 <div class="flex items-center justify-between text-secundary-300">
-                    <span>Save this address as default?</span>
-                    <div class="container-checkbox">
-                        <label>
-                            <input type="checkbox" checked>
-                            <span></span>
-                        </label>
-                    </div>
+                    <x-input.switch>
+                        Save thiss address as default?
+                    </x-input.switch>
                 </div>
 
             </x-card>
@@ -359,61 +355,3 @@
     </div>
 
 </div>
-
-@push('check-style')
-    <style>
-        .container-checkbox {
-            justify-content: center;
-            font-family: Arial;
-            display: flex;
-        }
-
-        .container-checkbox label {
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .container-checkbox input[type="checkbox"] {
-            margin: 0;
-            visibility: hidden;
-        }
-
-        .container-checkbox input[type="checkbox"]:checked+span {
-            background-color: #6366f1;
-        }
-
-        .container-checkbox input[type="checkbox"]:checked+span:After {
-            left: 22px;
-        }
-
-        .container-checkbox span {
-            background-color: #000;
-            display: inline-block;
-            border-radius: 10px;
-            transition: all .2s;
-            position: relative;
-            margin-right: 5px;
-            height: 20px;
-            width: 40px;
-        }
-
-        .container-checkbox span:after {
-            background-color: white;
-            display: inline-block;
-            position: absolute;
-            transition: all .2s;
-            border-radius: 50%;
-            height: 16px;
-            content: '';
-            width: 16px;
-            left: 3px;
-            top: 2px;
-        }
-
-        .container-checkbox span:hover:after {
-            cursor: pointer;
-        }
-
-    </style>
-@endpush
