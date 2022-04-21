@@ -134,7 +134,7 @@
 
                 <div class="flex items-center justify-between text-secundary-300">
                     <x-input.switch>
-                        Save thiss address as default?
+                        Save thiss contact as default?
                     </x-input.switch>
                 </div>
 
@@ -274,13 +274,9 @@
                 </div>
 
                 <div class="flex items-center justify-between text-secundary-300">
-                    <span>Use same contact address</span>
-                    <div class="container-checkbox">
-                        <label>
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                    </div>
+                    <x-input.switch>
+                        Save thiss address as default?
+                    </x-input.switch>
                 </div>
             </x-card>
 
@@ -291,7 +287,7 @@
                     <x-jet-input type="text" name="namecard" id="namecard" placeholder="Cardholder Name" />
                 </div>
 
-                
+
                 <div class="flex flex-1 gap-4">
                     <div class="space-y-2 w-6/12">
                         <x-jet-label for="numbercard" value="Card Number" />
@@ -310,45 +306,51 @@
                 </div>
 
                 <div class="flex items-center justify-between text-secundary-300">
-                    <span>Save this card as default payment method</span>
-                    <div class="container-checkbox">
-                        <label>
-                            <input type="checkbox">
-                            <span></span>
-                        </label>
-                    </div>
+                    <x-input.switch>
+                        Save thiss address as default?
+                    </x-input.switch>
                 </div>
             </x-card>
 
         </div>
 
         <div class="w-full lg:w-1/3">
-            <div class="bg-white rounded-lg p-8 space-y-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold text-secundary-600">
-                        Resume checkout
-                    </h3>
-                    <x-icon.shopping-bag class="w-8 h-8" />
-                </div>
+            <div class="bg-white rounded-lg overflow-hidden sticky top-4">
+                <div class="px-8 pt-8 pb-4 space-y-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-secundary-600">
+                            Resume checkout
+                        </h3>
+                        <x-icon.shopping-bag class="w-8 h-8" />
+                    </div>
+                    <div class="space-y-4 text-sm font-normal text-secundary-400">
+                        <div class="flex justify-between">
+                            <span>2 products</span>
+                            <span>$ 1,280.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>2 products</span>
+                            <span>$ 1,280.00</span>
+                        </div>
+                        <div class="flex justify-between text-secundary-200">
+                            <span>Discount</span>
+                            <span>$ 1,280.00</span>
+                        </div>
 
-                <div class="space-y-4 text-sm font-normal text-secundary-400">
-                    <div class="flex justify-between">
-                        <span>2 products</span>
-                        <span>$ 1,280.00</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>2 products</span>
-                        <span>$ 1,280.00</span>
-                    </div>
-                    <div class="flex justify-between font-bold">
-                        <span>Total</span>
-                        <span>$ 1,280.00</span>
+                        <div class="flex w-10/12 gap-2 items-center">
+                            <x-jet-input type="text" class="p-2" placeholder="Cupom" />
+                            <x-icon.plus class="h-8 w-10 hover:bg-primary-600 hover:cursor-pointer rounded-md bg-black text-white" />
+                        </div>
+
+                        <div class="flex justify-between font-bold">
+                            <span>Total</span>
+                            <span class="text-xl">$ 1,280.00</span>
+                        </div>
                     </div>
                 </div>
-
-                <x-jet-button class="gap-4 font-bold">
-                    <span>Finish checkout</span>
-                    <x-icon.check class="w-6 h-6" />
+                <x-jet-button class="gap-2 font-bold">
+                    <x-icon.lock-closed class="w-6 h-6 text-green-300" />
+                    <span>Confirm payment</span>
                 </x-jet-button>
             </div>
         </div>

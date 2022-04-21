@@ -45,3 +45,4 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 19       | Static Shipping checkout Section      | ✔️ |
 | 20       | Static Payment checkout Section       | ✔️ |
 | 21       | Switch Component With Alpinejs        | ✔️ |
+| 22       | Checkout Summary                      | ✔️ |
