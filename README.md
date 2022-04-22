@@ -47,3 +47,4 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 21       | Switch Component With Alpinejs        | ✔️ |
 | 22       | Checkout Summary                      | ✔️ |
 | 23       | Laravel Cashier                       | ✔️ |
+| 24       | Stripe Integration                    | ✔️ |

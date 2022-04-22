@@ -348,7 +348,24 @@
                         </div>
                     </div>
                 </div>
-                <x-jet-button class="gap-2 font-bold">
+                <x-jet-button 
+                    class="gap-2 font-bold" 
+                    x-data="{ 
+                        async confirmPayment($wire) {
+                            try {
+
+                                const stripeSession = await $wire.confirmPayment();
+                                await stripe.redirectToCheckout({
+                                    sessionId: stripeSession.id
+                                })
+
+                            } catch (error) {
+                                console.error(error)
+                            }
+                        }
+                    }"
+                    @click="confirmPayment($wire)"
+                >
                     <x-icon.lock-closed class="w-6 h-6 text-green-300" />
                     <span>Confirm payment</span>
                 </x-jet-button>
@@ -357,3 +374,10 @@
     </div>
 
 </div>
+
+@push('script-checkout')
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripe = Stripe('env("STRIPE_KEY")')
+</script>
+@endpush

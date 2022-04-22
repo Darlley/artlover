@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\{
-    Checkout
+    CheckoutPage
 };
 
 /*
@@ -26,4 +26,4 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
     })->name('dashboard');
 });
 
-Route::get("/checkout", Checkout::class)->name("checkout");
+Route::get("/checkout", CheckoutPage::class)->name("checkout");

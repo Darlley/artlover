@@ -19,6 +19,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        @stack('script-checkout')
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
