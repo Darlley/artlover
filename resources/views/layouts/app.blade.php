@@ -42,6 +42,7 @@
         </div>
 
         @stack('modals')
+        @stack('stripe')
 
         @livewireScripts
     </body>

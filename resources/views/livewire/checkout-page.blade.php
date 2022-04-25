@@ -348,7 +348,21 @@
                         </div>
                     </div>
                 </div>
-                <x-jet-button class="gap-2 font-bold">
+                <x-jet-button 
+                    class="gap-2 font-bold"
+                    x-data="{
+                        async confirmPayment($wire){
+                            try{
+                                var stripeSession = await $wire.confirmPayment()
+                                await window.location.replace(stripeSession.url)
+                            }
+                            catch(error){
+                                console.error(error);
+                            }
+                        }
+                    }"
+                    x-on:click="confirmPayment($wire)"
+                >
                     <x-icon.lock-closed class="w-6 h-6 text-green-300" />
                     <span>Confirm payment</span>
                 </x-jet-button>
