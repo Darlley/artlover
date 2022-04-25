@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Stripe\WebhookController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\{
     CheckoutPage
@@ -27,3 +28,4 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
 });
 
 Route::get("/checkout", CheckoutPage::class)->name("checkout");
+Route::post('/stripe/webhook', [WebhookController::class,'handleWebhook']);

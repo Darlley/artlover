@@ -13,12 +13,10 @@ class CheckoutPage extends Component
             amount: 10000,
             name: 'Air Pod XPTO',
             sessionOptions: [
-                'success_url' => "http://dev.test/success?checkout_id=xpto",
+                'success_url' => "http://dev.test/checkout?checkout_id=xpto",
                 'cancel_url' => "http://dev.test/checkout"
             ]
         );
-
-        // dd($checkout->asStripeCheckoutSession()->url);
 
         return [
             "id" => $checkout->asStripeCheckoutSession()->id,

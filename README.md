@@ -48,3 +48,4 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 22       | Checkout Summary                      | ✔️ |
 | 23       | Laravel Cashier                       | ✔️ |
 | 24       | Stripe Integration                    | ✔️ |
+| 25       | Stripe CLI and Webhooks               | ✔️ |

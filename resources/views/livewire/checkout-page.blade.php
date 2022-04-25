@@ -353,12 +353,8 @@
                     x-data="{ 
                         async confirmPayment($wire) {
                             try {
-
                                 const stripeSession = await $wire.confirmPayment();
-                                await stripe.redirectToCheckout({
-                                    sessionId: stripeSession.id
-                                })
-
+                                window.location.replace(stripeSession.url);
                             } catch (error) {
                                 console.error(error)
                             }
