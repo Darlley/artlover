@@ -60,3 +60,15 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | Modulo 2 | Admin Produc List                     | ❌ |
 |----------|---------------------------------------|---|
 | 1        | Starting A New Task                   | ❌ |
+
+| Modulo 3 | Purchase Flow                         | ❌ |
+|----------|---------------------------------------|---|
+| 1        | Module Overview                       | ❌ |
+
+| Modulo 4 | Manage Orders                         | ❌ |
+|----------|---------------------------------------|---|
+| 1        | Module Overview                       | ❌ |
+
+| Modulo 5 | Production Deploy                                 | ❌ |
+|----------|---------------------------------------------------|---|
+| 1        | Create Server on Digital Ocean with Laravel Forge | ❌ |
