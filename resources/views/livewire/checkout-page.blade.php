@@ -35,15 +35,15 @@
                                         {{ __('City') }}
                                     </div>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('São Paulo') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Rio de Janeiro') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Campo Grande') }}
                                     </x-jet-dropdown-link>
                                 </div>
@@ -73,15 +73,15 @@
                                         {{ __('State') }}
                                     </div>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('São Paulo') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Rio de Janeiro') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Mato Grosso do Sul') }}
                                     </x-jet-dropdown-link>
                                 </div>
@@ -111,11 +111,11 @@
                                         {{ __('Country') }}
                                     </div>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Brazil') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('United States') }}
                                     </x-jet-dropdown-link>
                                 </div>
@@ -184,15 +184,15 @@
                                         {{ __('City') }}
                                     </div>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('São Paulo') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Rio de Janeiro') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Campo Grande') }}
                                     </x-jet-dropdown-link>
                                 </div>
@@ -222,15 +222,15 @@
                                         {{ __('State') }}
                                     </div>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('São Paulo') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Rio de Janeiro') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Mato Grosso do Sul') }}
                                     </x-jet-dropdown-link>
                                 </div>
@@ -260,11 +260,11 @@
                                         {{ __('Country') }}
                                     </div>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('Brazil') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link
-                                        href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                        href="#">
                                         {{ __('United States') }}
                                     </x-jet-dropdown-link>
                                 </div>

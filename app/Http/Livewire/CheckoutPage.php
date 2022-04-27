@@ -2,21 +2,17 @@
 
 namespace App\Http\Livewire;
 
+use App\Facades\Stripe;
 use App\Models\Customer;
 use Livewire\Component;
 
 class CheckoutPage extends Component
 {
-    public function confirmPayment(){
-        $checkout = new Customer();
-        $checkout = $checkout->checkoutCharge(
-            amount: 10000,
-            name: 'Air Pod XPTO',
-            sessionOptions: [
-                'success_url' => "http://dev.test/checkout?checkout_id=xpto",
-                'cancel_url' => "http://dev.test/checkout"
-            ]
-        );
+    public function confirmPayment()
+    {
+        
+        $checkout = Stripe::createCheckoutSession(new Customer());
+        dd("confirm payment", $checkout->asStripeCheckoutSession());
 
         return [
             "id" => $checkout->asStripeCheckoutSession()->id,
