@@ -49,3 +49,14 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 23       | Laravel Cashier                       | ✔️ |
 | 24       | Stripe Integration                    | ✔️ |
 | 25       | Stripe CLI and Webhooks               | ✔️ |
+| 26       | Commit Checkout Page                  | ✔️ |
+| 27       | Next steps                            | ✔️ |
+| 28       | Setup Test Environment                | ✔️ |
+| 29       | Setup Tests with Pest PHP             | ✔️ |
+| 30       | Code Coverage With Xdebug             | ✔️ |
+| 31       | Confirm Payment Teste                 | ✔️ |
+| 32       | Finish, Clean Up and Commit           | ✔️ |
+
+| Modulo 2 | Admin Produc List                     | ❌ |
+|----------|---------------------------------------|---|
+| 1        | Starting A New Task                   | ❌ |
