@@ -22,7 +22,7 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 5        | Virtual Studio Code Extensions | ✔️ |
 | 6        | Main Technologies Overview     | ✔️ |
 
-| Modulo 1 | Checkout                              | ❌ |
+| Modulo 1 | Checkout                              | ✔️ |
 |----------|---------------------------------------|---|
 | 1        | Module Overview                       | ✔️ |
 | 2        | Figma Introduction                    | ✔️ |
