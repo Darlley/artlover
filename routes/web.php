@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\{
     CheckoutPage
 };
+use App\Http\Livewire\Admin\ProductsList;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
 });
 
 Route::get("/checkout", CheckoutPage::class)->name("checkout");
+Route::get("/products", ProductsList::class)->name('products');
 Route::post('/stripe/webhook', [WebhookController::class,'handleWebhook']);
