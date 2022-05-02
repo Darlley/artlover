@@ -61,7 +61,7 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 |----------|---------------------------------------|---|
 | 1        | Starting A New Task                   | ✔️ |
 | 2        | Top Admin Navigation                  | ✔️ |
-| 2        | Page Title and Actions                | ✔️ |
+| 3        | Page Title and Actions                | ✔️ |
 
 | Modulo 3 | Purchase Flow                         | ❌ |
 |----------|---------------------------------------|---|
