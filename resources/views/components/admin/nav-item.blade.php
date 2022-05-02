@@ -1,6 +1,5 @@
 @props([
     'icon',
-    'route',
     'isActive' => false
 ])
 

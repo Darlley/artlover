@@ -45,6 +45,7 @@ module.exports = {
         extend: {
             opacity: ['disabled'],
             transform: ['active'],
+            textColor: ['group-hover','group-focus']
         }
     },
 
