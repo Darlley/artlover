@@ -10,4 +10,33 @@
         <a href="#draft" class="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-800">Draft</a>
         <a href="#published" class="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-800">Published</a>
     </div>
+
+</div>
+
+<div class="grid grid-cols-3 grid-flow-w gap-5 my-6">
+
+    <x-products.card>
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </x-products.card>
+
+    <x-products.card>
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </x-products.card>
+
+    <x-products.card>
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </x-products.card>
+
+    <x-products.card>
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </x-products.card>
+
+    <x-products.card>
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </x-products.card>
+
+    <x-products.card>
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </x-products.card>
+
 </div>

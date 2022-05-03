@@ -24,7 +24,7 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100 bg-opacity-600">
+        <div class="min-h-screen bg-blue-50 bg-opacity-600">
             <x-admin.nav-bar />
 
             <!-- Page Content -->
