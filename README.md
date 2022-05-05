@@ -63,6 +63,9 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 2        | Top Admin Navigation                  | ✔️ |
 | 3        | Page Title and Actions                | ✔️ |
 | 4        | Product Card List                     | ✔️ |
+| 5        | Commit Changes                        | ✔️ |
+| 6        | Define Test Cases                     | ✔️ |
+| 7        | Protecting Routes                     | ✔️ |
 
 | Modulo 3 | Purchase Flow                         | ❌ |
 |----------|---------------------------------------|---|
