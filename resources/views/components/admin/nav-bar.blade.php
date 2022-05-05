@@ -3,7 +3,7 @@
         <img src="{{ asset("img/growp.png") }}" alt="Logo Growp" class="h-12">
         
         <div class="flex items-center gap-4">
-            <x-admin.nav-item icon="shopping-bag" :isActive="true" href="{{ route('products') }}">Products</x-admin.nav-item>
+            <x-admin.nav-item icon="shopping-bag" :isActive="true" href="{{ route('admin.products') }}">Products</x-admin.nav-item>
             <x-admin.nav-item icon="document-search">About</x-admin.nav-item>
             <x-admin.nav-item icon="mail">Contact</x-admin.nav-item>
         </div>
