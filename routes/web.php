@@ -27,7 +27,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
         return view('dashboard');
     })->name('dashboard');
 });
-Route::middleware(['auth:sanctum','verified'])->prefix('admin')->name('admin.')->group(function(){
+
+Route::middleware(['auth:sanctum','verified', 'admin'])->prefix('admin')->name('admin.')->group(function(){
     Route::get("products", ProductsList::class)->name('products');
 });
 
