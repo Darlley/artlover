@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\User as AuthUser;
 use function Pest\Livewire\livewire;
 
 it('is allowed for admin only', function(){
+
     /** @var User $admin */
     $admin = User::factory()->create([
         'admin' => true
@@ -34,7 +35,9 @@ it('is allowed for admin only', function(){
 
 });
 
-it('should list all products paginated per 9');
+it('should list all products paginated per 9', function() {
+    //
+});
 it('should search products by name');
 it('should search products by price');
 it('should search products by description');

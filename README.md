@@ -67,6 +67,7 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 6        | Define Test Cases                     | ✔️ |
 | 7        | Protecting Routes                     | ✔️ |
 | 8        | IsAdmin Middleware                    | ✔️ |
+| 9        | Product Model, Factory and Migration  | ✔️ |
 
 | Modulo 3 | Purchase Flow                         | ❌ |
 |----------|---------------------------------------|---|
