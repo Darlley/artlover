@@ -2,12 +2,9 @@
 
 namespace Tests\Feature\Http\Livewire\Admin;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-
 use Tests\TestCase;
 use App\Models\User;
-use Illuminate\Foundation\Auth\User as AuthUser;
+use App\Models\Product;
 
 use function Pest\Livewire\livewire;
 
@@ -36,8 +33,13 @@ it('is allowed for admin only', function(){
 });
 
 it('should list all products paginated per 9', function() {
-    //
+    $lastProduct = Product::factory()->createOne();
+
+    dd($lastProduct->toArray());
+    
+    // livewire(ProductList::class)->assertDontSee($lastProduct->name);
 });
+
 it('should search products by name');
 it('should search products by price');
 it('should search products by description');
