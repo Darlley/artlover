@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
         UserFactory::new()->withPersonalTeam()->create([
             'name' => "Darlley",
             'email' => "darlleybrito@gmail.com",
-            'password' => bcrypt('12345678')
+            'password' => bcrypt('dev123'),
+            'admin' => 1
         ]);
     }
 }

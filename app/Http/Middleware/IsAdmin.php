@@ -25,6 +25,6 @@ class IsAdmin
             // return redirect(404) muda de rota (refresh da página)
         }
 
-        $next($request);
+        return $next($request);
     }
 }

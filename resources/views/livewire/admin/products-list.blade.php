@@ -1,3 +1,4 @@
+<x-guest-layout>
 <div class="flex justify-between">
 
     <div class="flex gap-4 items-center">
@@ -15,28 +16,10 @@
 
 <div class="grid grid-cols-3 grid-flow-w gap-5 my-6">
 
-    <x-products.card>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-    </x-products.card>
+    @foreach ($this->products as $product)    
+        <x-products.card :product="$product" />
+    @endforeach
 
-    <x-products.card>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-    </x-products.card>
-
-    <x-products.card>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-    </x-products.card>
-
-    <x-products.card>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-    </x-products.card>
-
-    <x-products.card>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-    </x-products.card>
-
-    <x-products.card>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-    </x-products.card>
-
+    {{ $this->products->links() }}
 </div>
+</x-guest-layout>

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Http\Livewire\Admin;
 
+use App\Http\Livewire\Admin\ProductsList;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Product;
@@ -33,11 +34,9 @@ it('is allowed for admin only', function(){
 });
 
 it('should list all products paginated per 9', function() {
-    $lastProduct = Product::factory()->createOne();
-
-    dd($lastProduct->toArray());
-    
-    // livewire(ProductList::class)->assertDontSee($lastProduct->name);
+    /** @var Product $lastProduct */
+    $lastProduct = Product::factory(10)->create()->last();
+    livewire(ProductsList::class)->assertDontSee($lastProduct->name);
 });
 
 it('should search products by name');
