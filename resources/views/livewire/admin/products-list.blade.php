@@ -1,4 +1,3 @@
-<x-guest-layout>
 <div class="flex justify-between">
 
     <div class="flex gap-4 items-center">
@@ -22,4 +21,3 @@
 
     {{ $this->products->links() }}
 </div>
-</x-guest-layout>

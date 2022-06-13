@@ -9,11 +9,11 @@ class ProductsList extends Component
 {
     public function getProductsProperty()
     {
-        return Product::paginate(9);
+        return Product::paginate();
     }
 
     public function render()
     {
-        return view('livewire.admin.products-list');
+        return view('livewire.admin.products-list')->layout('layouts.admin');
     }
 }
