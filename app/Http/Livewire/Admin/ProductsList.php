@@ -10,21 +10,29 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 class ProductsList extends Component
 {
     public $search;
+    public $filter;
 
     public function getProductsProperty()
     {
-        return Product::query()->when($this->search, function (Builder $query) {
-            $formattedNumber = is_numeric($this->search)
-                ? Str::of($this->search)->replace(',', '')->replace('.', '')
-                : $this->search;
+        return Product::query()
+            ->when($this->search, function (Builder $query) {
+                $formattedNumber = is_numeric($this->search)
+                    ? Str::of($this->search)->replace(',', '')->replace('.', '')
+                    : $this->search;
 
-            $query->where(
-                fn (Builder $product) => $product
-                    ->where('name', 'LIKE', '%' . $this->search . '%')
-                    ->orWhere('price', 'LIKE', '%' . $formattedNumber . '%')
-                    ->orWhere('description', 'LIKE', '%' . $this->search . '%')
-            );
-        })->paginate(9);
+                $query->where(
+                    fn (Builder $product) => $product
+                        ->where('name', 'LIKE', '%' . $this->search . '%')
+                        ->orWhere('price', 'LIKE', '%' . $formattedNumber . '%')
+                        ->orWhere('description', 'LIKE', '%' . $this->search . '%')
+                );
+            })
+            ->when($this->filter, function (Builder $query) {
+                $this->filter === 'draft' 
+                    ? $query->whereNull('published_at')
+                    : $query->whereNotNull('published_at');
+            })
+            ->paginate(9);
     }
 
     public function render()

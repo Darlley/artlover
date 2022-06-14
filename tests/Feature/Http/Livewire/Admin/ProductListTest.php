@@ -74,7 +74,34 @@ it('should search products by description', function () {
     $productList->each(fn ($product) => $component->assertDontSee($product->description));
 });
 
-it('can be filteres by draft');
-it('can be filteres by published');
+it('can be filteres by draft', function () {
+    /** @var Collection $productList */
+    $productList = Product::factory(3)->create(['published_at' => now()]);
+    /** @var Collection $draftProduct */
+    $draftProduct = Product::factory()->create(['published_at' => null]);
+
+    $component = livewire(ProductList::class)
+        ->set('filter','draft')
+        ->assertSee($draftProduct->name)
+        ->assertSee($productList->random()->name);
+
+    $productList->each(fn ($product) => $component->assertDontSee($product->name));
+});
+
+it('can be filteres by published', function(){
+
+    /** @var Collection $productList */
+    $productList = Product::factory(3)->create(['published_at' => null]);
+    /** @var Collection $draftProduct */
+    $draftProduct = Product::factory()->create(['published_at' => now()]);
+
+    $component = livewire(ProductList::class)
+        ->set('filter','published')
+        ->assertSee($draftProduct->name)
+        ->assertSee($productList->random()->name);
+
+    $productList->each(fn ($product) => $component->assertDontSee($product->name));
+});
+
 it('should paginate by url');
 it('shound sync query string');

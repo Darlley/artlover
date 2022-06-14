@@ -7,9 +7,9 @@
         </div>
     
         <div class="flex gap-2 text-gray-400 font-bold items-center">
-            <a href="#all" class="text-gray-800 border-b-2 border-gray-800">All</a>
-            <a href="#draft" class="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-800">Draft</a>
-            <a href="#published" class="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-800">Published</a>
+            <x-filter-item wire:click="$set('filter','')" :is_active="!$filter">All</x-filter-item>
+            <x-filter-item wire:click="$set('filter','draft')" :is_active="$filter === 'draft'">Draft</x-filter-item>
+            <x-filter-item wire:click="$set('filter','published')" :is_active="$filter === 'published'">Published</x-filter-item>
         </div>
     
     </div>

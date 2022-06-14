@@ -22,14 +22,10 @@ class Product extends Model
     use HasFactory;
     use SoftDeletes;
 
-    const STATUS_DRAFT = 'draft';
-    const STATUS_PUBLISHED = 'published';
-
     protected $fillable = [
         'name', 
         'description',
         'price',
-        'status',
         'published_at'
     ];
 }
