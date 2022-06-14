@@ -2,12 +2,12 @@
 
 namespace Tests\Feature\Http\Livewire\Admin;
 
-use App\Http\Livewire\Admin\ProductsList;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Product;
-
 use function Pest\Livewire\livewire;
+
+use App\Http\Livewire\Admin\ProductsList;
 
 it('is allowed for admin only', function(){
     /** @var User $admin */
@@ -60,7 +60,20 @@ it('should search products by price', function () {
     $productList->each(fn ($product) => $component->assertDontSee($product->price));
 });
 
-it('should search products by description');
+it('should search products by description', function () {
+    /** @var Collection $productList */
+    $productList = Product::factory(3)->create();
+    /** @var Product $product */
+    $product = Product::factory()->create();
+
+
+    $component = livewire(ProductList::class)
+        ->set('search', $product->description)
+        ->assertSee($product->description)
+        ->assertDontSee($productList->random()->description);
+    $productList->each(fn ($product) => $component->assertDontSee($product->description));
+});
+
 it('can be filteres by draft');
 it('can be filteres by published');
 it('should paginate by url');
