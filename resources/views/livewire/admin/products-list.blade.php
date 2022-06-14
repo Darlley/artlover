@@ -3,7 +3,7 @@
     
         <div class="flex gap-4 items-center">
             <h1 class="font-bold text-3xl text-gray-800">Products ({{ $this->products->total() }})</h1>
-            <x-input.search placeholder="Search..." wire:model.debounce.500ms='search' />
+            <x-input.search placeholder="Search..." wire:model.debounce.500ms='search' :isActive="!!$search" />
         </div>
     
         <div class="flex gap-2 text-gray-400 font-bold items-center">
@@ -20,6 +20,8 @@
             <x-products.card :product="$product" />
         @endforeach
     
-        {{ $this->products->links() }}
     </div>
+
+    {{ $this->products->links() }}
+
 </div>

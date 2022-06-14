@@ -103,5 +103,8 @@ it('can be filteres by published', function(){
     $productList->each(fn ($product) => $component->assertDontSee($product->name));
 });
 
-it('should paginate by url');
+it('should paginate by url', function () { 
+    //return 
+});
+
 it('shound sync query string');

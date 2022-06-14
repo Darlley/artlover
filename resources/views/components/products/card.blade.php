@@ -4,8 +4,8 @@
         <span class="writespace-nowrap">${{ $product->price / 100 }}</span>
     </div>
 
-    <div class="rounded-lg overflow-hidden">
-        <img src="{{ asset('img/growp-thumb.png') }}" alt="Leadszapp product">
+    <div class="rounded-lg overflow-hidden h-48 flex">
+        <img src="{{ asset('img/growp-thumb.png') }}" alt="Leadszapp product" class="object-cover">
     </div>
 
     <div>

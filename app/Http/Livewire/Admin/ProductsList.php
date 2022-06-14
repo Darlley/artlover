@@ -6,11 +6,19 @@ use App\Models\Product;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Livewire\WithPagination;
 
 class ProductsList extends Component
 {
+    use WithPagination;
+
     public $search;
     public $filter;
+
+    protected $queryString = [
+        "search" => ["except" => ""],
+        "filter" => ["except" => ""],
+    ];
 
     public function getProductsProperty()
     {
