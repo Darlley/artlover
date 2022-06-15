@@ -1915,6 +1915,12 @@ select {
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
 /* @import './_partials/switch.css' */
 .hover\:cursor-pointer:hover {
   cursor: pointer;
@@ -1951,13 +1957,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-.hover\:bg-primary-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 82 193 / var(--tw-bg-opacity));
-}
 .hover\:bg-primary-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+}
+.hover\:bg-primary-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 82 193 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
@@ -1983,13 +1989,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
-.hover\:text-secundary-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(10 14 23 / var(--tw-text-opacity));
-}
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.hover\:text-secundary-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(10 14 23 / var(--tw-text-opacity));
 }
 .hover\:opacity-100:hover {
   opacity: 1;
