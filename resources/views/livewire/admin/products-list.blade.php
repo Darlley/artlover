@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <button>New product</button>
+        <x-button class="w-max h-max rounded-lg p-2">New product</x-button>
     
     </div>
     

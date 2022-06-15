@@ -22,7 +22,7 @@
         @stack('script-checkout')
     </head>
     <body class="font-sans antialiased">
-        <x-jet-banner />
+        <x-banner />
 
         <div class="min-h-screen bg-blue-50 bg-opacity-600">
             <x-admin.nav-bar />

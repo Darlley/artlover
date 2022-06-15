@@ -6,14 +6,14 @@
         <div class="lg:w-2/3 space-y-8">
 
             <x-card title="Contact" icon="user-circle">
-                <x-jet-label for="name" value="Nome" />
-                <x-jet-input type="text" name="input" id="name" placeholder="Name" />
-                <x-jet-label for="email" value="Email" />
-                <x-jet-input type="email" name="email" id="email" placeholder="Email" />
+                <x-label for="name" value="Nome" />
+                <x-input type="text" name="input" id="name" placeholder="Name" />
+                <x-label for="email" value="Email" />
+                <x-input type="email" name="email" id="email" placeholder="Email" />
 
                 <div class="flex justify-between">
                     <div class="space-y-2 ">
-                        <x-jet-dropdown align="left" width="60">
+                        <x-dropdown align="left" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -34,24 +34,24 @@
                                     <div class="block px-4 py-2 text-xs text-secundary-300">
                                         {{ __('City') }}
                                     </div>
-                                    <x-jet-dropdown-link
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('São Paulo') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Rio de Janeiro') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Campo Grande') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </div>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                     <div class="space-y-2 ">
-                        <x-jet-dropdown align="right" width="60">
+                        <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -72,24 +72,24 @@
                                     <div class="block px-4 py-2 text-xs text-secundary-300">
                                         {{ __('State') }}
                                     </div>
-                                    <x-jet-dropdown-link
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('São Paulo') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Rio de Janeiro') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Mato Grosso do Sul') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </div>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                     <div class="space-y-2 ">
-                        <x-jet-dropdown align="right" width="60">
+                        <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -110,27 +110,27 @@
                                     <div class="block px-4 py-2 text-xs text-secundary-300">
                                         {{ __('Country') }}
                                     </div>
-                                    <x-jet-dropdown-link
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Brazil') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('United States') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </div>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                 </div>
 
-                <x-jet-label for="zipcode" value="Zipcode" />
-                <x-jet-input type="text" name="zipcode" id="zipcode" placeholder="Zip Code" />
+                <x-label for="zipcode" value="Zipcode" />
+                <x-input type="text" name="zipcode" id="zipcode" placeholder="Zip Code" />
 
-                <x-jet-label for="address1" value="Address Line 1" />
-                <x-jet-input type="text" name="input" id="address1" placeholder="Address Line 1" />
-                <x-jet-label for="address2" value="Address Line 2" />
-                <x-jet-input type="text" name="input" id="address2" placeholder="Address Line 2" />
+                <x-label for="address1" value="Address Line 1" />
+                <x-input type="text" name="input" id="address1" placeholder="Address Line 1" />
+                <x-label for="address2" value="Address Line 2" />
+                <x-input type="text" name="input" id="address2" placeholder="Address Line 2" />
 
                 <div class="flex items-center justify-between text-secundary-300">
                     <x-input.switch>
@@ -141,28 +141,28 @@
             </x-card>
 
             <x-card title="Delivery" icon="truck">
-                <x-jet-label for="name" value="Nome" />
-                <x-jet-input type="text" name="input" id="name" placeholder="Name" />
-                <x-jet-label for="email" value="Email" />
-                <x-jet-input type="email" name="email" id="email" placeholder="Email" />
+                <x-label for="name" value="Nome" />
+                <x-input type="text" name="input" id="name" placeholder="Name" />
+                <x-label for="email" value="Email" />
+                <x-input type="email" name="email" id="email" placeholder="Email" />
 
                 <div class="flex gap-4">
 
                     <div class="flex-1 space-y-2">
-                        <x-jet-label for="address1" value="Address Line 1" />
-                        <x-jet-input type="text" name="input" id="address1" placeholder="Address Line 1" />
+                        <x-label for="address1" value="Address Line 1" />
+                        <x-input type="text" name="input" id="address1" placeholder="Address Line 1" />
                     </div>
 
                     <div class="flex-1 space-y-2">
-                        <x-jet-label for="address2" value="Address Line 2" />
-                        <x-jet-input type="text" name="input" id="address2" placeholder="Address Line 2" />
+                        <x-label for="address2" value="Address Line 2" />
+                        <x-input type="text" name="input" id="address2" placeholder="Address Line 2" />
                     </div>
 
                 </div>
 
                 <div class="flex justify-between">
                     <div class="space-y-2 ">
-                        <x-jet-dropdown align="left" width="60">
+                        <x-dropdown align="left" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -183,24 +183,24 @@
                                     <div class="block px-4 py-2 text-xs text-secundary-300">
                                         {{ __('City') }}
                                     </div>
-                                    <x-jet-dropdown-link
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('São Paulo') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Rio de Janeiro') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Campo Grande') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </div>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                     <div class="space-y-2 ">
-                        <x-jet-dropdown align="right" width="60">
+                        <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -221,24 +221,24 @@
                                     <div class="block px-4 py-2 text-xs text-secundary-300">
                                         {{ __('State') }}
                                     </div>
-                                    <x-jet-dropdown-link
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('São Paulo') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Rio de Janeiro') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Mato Grosso do Sul') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </div>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                     <div class="space-y-2 ">
-                        <x-jet-dropdown align="right" width="60">
+                        <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -259,17 +259,17 @@
                                     <div class="block px-4 py-2 text-xs text-secundary-300">
                                         {{ __('Country') }}
                                     </div>
-                                    <x-jet-dropdown-link
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('Brazil') }}
-                                    </x-jet-dropdown-link>
-                                    <x-jet-dropdown-link
+                                    </x-dropdown-link>
+                                    <x-dropdown-link
                                         href="#">
                                         {{ __('United States') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </div>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                 </div>
 
@@ -283,25 +283,25 @@
             <x-card title="Payment" icon="credit-card">
 
                 <div class="space-y-2">
-                    <x-jet-label for="namecard" value="Cardholder Name" />
-                    <x-jet-input type="text" name="namecard" id="namecard" placeholder="Cardholder Name" />
+                    <x-label for="namecard" value="Cardholder Name" />
+                    <x-input type="text" name="namecard" id="namecard" placeholder="Cardholder Name" />
                 </div>
 
 
                 <div class="flex flex-1 gap-4">
                     <div class="space-y-2 w-6/12">
-                        <x-jet-label for="numbercard" value="Card Number" />
-                        <x-jet-input type="numeric" name="numbercard" id="numbercard" placeholder="Card Number" />
+                        <x-label for="numbercard" value="Card Number" />
+                        <x-input type="numeric" name="numbercard" id="numbercard" placeholder="Card Number" />
                     </div>
 
                     <div class="flex-1 space-y-2 w-3/12">
-                        <x-jet-label for="valid" value="Valid" />
-                        <x-jet-input type="date" name="valid" id="valid" placeholder="MM/YY" />
+                        <x-label for="valid" value="Valid" />
+                        <x-input type="date" name="valid" id="valid" placeholder="MM/YY" />
                     </div>
 
                     <div class="flex-1 space-y-2 w-3/12">
-                        <x-jet-label for="ccv" value="Security Code" />
-                        <x-jet-input type="number" max="999" min="0" name="ccv" id="address2" placeholder="CCV" />
+                        <x-label for="ccv" value="Security Code" />
+                        <x-input type="number" max="999" min="0" name="ccv" id="address2" placeholder="CCV" />
                     </div>
                 </div>
 
@@ -338,7 +338,7 @@
                         </div>
 
                         <div class="flex w-10/12 gap-2 items-center">
-                            <x-jet-input type="text" class="p-2" placeholder="Cupom" />
+                            <x-input type="text" class="p-2" placeholder="Cupom" />
                             <x-icon.plus class="h-8 w-10 hover:bg-primary-600 hover:cursor-pointer rounded-md bg-black text-white" />
                         </div>
 
@@ -348,8 +348,8 @@
                         </div>
                     </div>
                 </div>
-                <x-jet-button 
-                    class="gap-2 font-bold" 
+                <x-button 
+                    class="gap-2 font-bold w-full border border-transparent uppercase rounded-t-none py-4" 
                     x-data="{ 
                         async confirmPayment($wire) {
                             try {
@@ -364,7 +364,7 @@
                 >
                     <x-icon.lock-closed class="w-6 h-6 text-green-300" />
                     <span>Confirm payment</span>
-                </x-jet-button>
+                </x-button>
             </div>
         </div>
     </div>
