@@ -21,7 +21,7 @@ it('is allowed for admin only', function(){
     /**@var TestCase $this */
     $this->get(route('admin.products'))->assertRedirect(route('login'));
     $this->actingAs($user)->get(route('admin.products'))->assertNotFound();
-    $this->actingAs($admin)->get(route('admin.products'))->assertStatus(500);
+    $this->actingAs($admin)->get(route('admin.products'))->assertStatus(200);
 });
 
 it('should list all products paginated per 9', function() {
@@ -103,8 +103,6 @@ it('can be filteres by published', function(){
     $productList->each(fn ($product) => $component->assertDontSee($product->name));
 });
 
-it('should paginate by url', function () { 
-    //return 
-});
-
-it('shound sync query string');
+// pagination livewire
+// it('should paginate by url');
+// it('shound sync query string');
