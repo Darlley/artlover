@@ -20,6 +20,10 @@ class ProductsList extends Component
         "filter" => ["except" => ""],
     ];
 
+    public function createProduct(){
+        return redirect()->route('admin.products.create');
+    }
+
     public function getProductsProperty()
     {
         return Product::query()
@@ -36,7 +40,7 @@ class ProductsList extends Component
                 );
             })
             ->when($this->filter, function (Builder $query) {
-                $this->filter === 'draft' 
+                $this->filter === 'draft'
                     ? $query->whereNull('published_at')
                     : $query->whereNotNull('published_at');
             })

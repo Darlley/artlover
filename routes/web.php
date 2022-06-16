@@ -3,9 +3,12 @@
 use App\Http\Controllers\Stripe\WebhookController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\{
-    CheckoutPage
+    CheckoutPage,
 };
-use App\Http\Livewire\Admin\ProductsList;
+use App\Http\Livewire\Admin\{
+    ProductsList,
+    ProductForm
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +32,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
 });
 
 Route::middleware(['auth:sanctum','verified','admin'])->prefix('admin')->name('admin.')->group(function(){
-    Route::get("/products", ProductsList::class)->name('products');
+    Route::get("products", ProductsList::class)->name('products');
+    Route::get("products/create", ProductForm::class)->name('products.create');
 });
 
 Route::get("/checkout", CheckoutPage::class)->name("checkout");

@@ -1,9 +1,9 @@
 <div>
     <div class="flex justify-between">
-    
+
         <div class="space-y-4">
-            <h1 class="font-bold text-3xl text-gray-800">Products ({{ $this->products->total() }})</h1>
-            
+            <x-page-title>Products ({{ $this->products->total() }})</x-page-title>
+
             <div class="flex items-center space-x-4">
                 <x-filter-item wire:click="$set('filter','')" :is_active="!$filter">All</x-filter-item>
                 <x-filter-item wire:click="$set('filter','draft')" :is_active="$filter === 'draft'">Draft</x-filter-item>
@@ -12,16 +12,16 @@
             </div>
         </div>
 
-        <x-button class="w-max h-max rounded-lg p-2">New product</x-button>
-    
+        <x-button class="w-max h-max rounded-lg p-2" wire:click="createProduct">New product</x-button>
+
     </div>
-    
+
     <div class="grid grid-cols-3 grid-flow-w gap-5 my-6">
-    
+
         @foreach ($this->products as $product)
             <x-products.card :product="$product" />
         @endforeach
-    
+
     </div>
 
     {{ $this->products->links() }}
