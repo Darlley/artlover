@@ -20,10 +20,6 @@ class ProductsList extends Component
         "filter" => ["except" => ""],
     ];
 
-    public function createProduct(){
-        return redirect()->route('admin.products.create');
-    }
-
     public function getProductsProperty()
     {
         return Product::query()

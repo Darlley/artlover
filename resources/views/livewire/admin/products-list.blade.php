@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <x-button class="w-max h-max rounded-lg p-2" wire:click="createProduct">New product</x-button>
+        <x-button.link class="w-max h-max rounded-lg p-2 cursor-pointer" :href="route('admin.products.create')">New product</x-button.link>
 
     </div>
 
