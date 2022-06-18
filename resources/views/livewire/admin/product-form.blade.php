@@ -1,6 +1,6 @@
 <div>
     <x-page-title>New Product</x-page-title>
-    
+
     <div class="flex space-x-4 mt-5">
         <div class="w-1/3">
             <div class="mb-4">
@@ -16,8 +16,72 @@
                 </button>
             </div>
         </div>
-        <div class="w-2/3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vitae libero illo eaque vero aliquam. Vel laborum, ex veritatis eos iusto vitae doloremque labore soluta, odio tempora facere excepturi? Obcaecati.</p>
+        <div class="w-2/3 space-y-3">
+            <x-input type="text" placeholder="Produc name" />
+            <x-input type="text" placeholder="Description" />
+            <x-input type="text" placeholder="Categories" />
+            <x-input type="number" placeholder="$ Price" />
+
+            <div class="grid grid-cols-4 mt-1">
+                <h3 class="text-gray-800 text-xl font-bold col-span-2">Variations</h3>
+                <h4 class="text-gray-700 text-xl">Price</h4>
+                <h4 class="text-gray-700 text-xl">Quantity</h4>
+            </div>
+
+            <!-- <div class="bg-white rounded-lg overflow-hidden p-2">
+                <div class="grid grid-cols-4">
+                    <div class="col-span-2">
+                        <img src="{{ asset('img/muckup.jpg') }}" alt="" class="h-20 cursor-pointer object-cover rounded-lg hover:scale-90 transition-all duration-200">
+                        <x-input type="text" placeholder="Name" class="w-min bg-transparent" />
+                    </div>
+                    <div class="">
+                        <x-input type="number" placeholder="$ price" />
+                    </div>
+                    <div class="">
+                        <x-input type="number" placeholder="Quantiy" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-4">
+                    <div class="col-span-2 flex">
+                        <img src="{{ asset('img/muckup.jpg') }}" alt="" class="h-20 cursor-pointer object-cover rounded-lg hover:scale-90 transition-all duration-200">
+                        <x-input type="text" placeholder="Name" />
+                    </div>
+                    <div class="">
+                        <x-input type="number" placeholder="$ price" />
+                    </div>
+                    <div class="flex">
+                        <x-input type="number" placeholder="Quantiy" />
+                        <div>
+                            excluir
+                        </div>
+                    </div>
+                </div>
+
+                <x-button class="rounded-t-none w-full py-4 mt-2">+ Add Ariation</x-button>
+            </div> -->
+
+            <div class="rounded-lg overflow-hidden">
+                <div class="grid grid-cols-4 bg-white">
+                    <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
+                        <div class="w-12 h-12 bg-gray-100 flex items-center rounded-lg justify-center">
+                            <x-icon.camera class="w-6 h-6 text-gray-400" />
+                        </div>
+                        <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name" />
+                    </div>
+                    <div class="flex items-center pr-6">
+                        <x-input type="number" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
+                    </div>
+                    <div class="grid grid-cols-4 items-center justify-center">
+                        <x-input type="number" class="col-span-3 bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Quantity" />
+                        <div class="flex items-center justify-center pr-2 gap-1">
+                            <x-icon.trash class="w-6 h-6 text-red-300" />
+                            <x-icon.drag-move class="w-6 h-6 text-gray-500" />
+                        </div>
+                    </div>
+                </div>
+
+                <x-button class="py-4 rounded-t-none w-full">+ Add Variation</x-button>
+            </div>
         </div>
     </div>
 </div>
