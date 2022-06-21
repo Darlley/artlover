@@ -35,6 +35,8 @@
                     <div>
                         <x-input type="number" placeholder="$ Price" wire:model.defer='prodcut.price'/>
                         <x-input-error for="product.price" />
+
+                        <x-input.base-price placeholder="$ Price" />
                     </div>
                 </div>
 
@@ -179,4 +181,5 @@
             </form>
         </div>
     </div>
+    
 </div>

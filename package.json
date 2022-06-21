@@ -18,10 +18,12 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
+        "simple-mask-money": "^3.0.1",
         "tailwindcss": "^3.0.0"
     },
     "dependencies": {
         "@stripe/stripe-js": "^1.28.0",
-        "@tailwindcss/line-clamp": "^0.4.0"
+        "@tailwindcss/line-clamp": "^0.4.0",
+        "currency.js": "^2.0.4"
     }
 }
