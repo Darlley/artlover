@@ -24,7 +24,7 @@
                         <x-input type="text" placeholder="Produc name" wire:model.defer='product.name'/>
                         <x-input-error for="product.name" />
                     </div>
-                    
+
                     <div>
                         <x-input type="text" placeholder="Description" wire:model.defer='prodcut.description'/>
                         <x-input-error for="product.description" />
