@@ -1,11 +1,10 @@
 import './bootstrap';
 
+import currency from "currency.js";
+import SimpleMaskMoney from "simple-mask-money";
 import Alpine from 'alpinejs';
+
+window.currency = currency;
+window.SimpleMaskMoney = SimpleMaskMoney;
 window.Alpine = Alpine;
 Alpine.start();
-
-import currency from "currency.js";
-window.currency = currency;
-
-import SimpleMaskMoney from "simple-mask-money";
-window.SimpleMaskMoney = SimpleMaskMoney;

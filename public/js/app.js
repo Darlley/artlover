@@ -5098,19 +5098,19 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-/* harmony import */ var currency_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! currency.js */ "./node_modules/currency.js/dist/currency.min.js");
-/* harmony import */ var currency_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(currency_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var simple_mask_money__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! simple-mask-money */ "./node_modules/simple-mask-money/lib/simple-mask-money.js");
-/* harmony import */ var simple_mask_money__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(simple_mask_money__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var currency_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! currency.js */ "./node_modules/currency.js/dist/currency.min.js");
+/* harmony import */ var currency_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(currency_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var simple_mask_money__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-mask-money */ "./node_modules/simple-mask-money/lib/simple-mask-money.js");
+/* harmony import */ var simple_mask_money__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_mask_money__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
 
 
-window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
 
-window.currency = (currency_js__WEBPACK_IMPORTED_MODULE_2___default());
 
-window.SimpleMaskMoney = (simple_mask_money__WEBPACK_IMPORTED_MODULE_3___default());
+window.currency = (currency_js__WEBPACK_IMPORTED_MODULE_1___default());
+window.SimpleMaskMoney = (simple_mask_money__WEBPACK_IMPORTED_MODULE_2___default());
+window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_3__["default"];
+alpinejs__WEBPACK_IMPORTED_MODULE_3__["default"].start();
 
 /***/ }),
 

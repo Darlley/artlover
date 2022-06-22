@@ -1,13 +1,19 @@
 <div 
     x-data="{
-        integerValue: 1000,
+        integerValue: null,
         maskedValue: null,
-        prefix: '$',
+        prefix: '$ ',
         mounted(){
-            this.maskedValue = currency(this.integerValue, {
-                fromCents: true,
-                symbol: '$ '
-            })
+            this.maskedValue = this.mask(this.integerValue)
+        },
+        mask(value){
+            if(value === null) return null;
+            return currency(value, { fromCents: true, symbol: this.prefix }).format()
+        },
+        handleChange({target: input}){
+            const integerValue = input.value.replaceAll(/\D/g,'')
+            this.maskedValue = this.mask(+integerValue)
+            this.integerValue = +integerValue / 100
         }
     }"
     x-init="mounted()"
@@ -15,15 +21,15 @@
     <input 
         {{ $attributes->except(["wire:model"]) }} 
         type="text" 
-        id="price" 
-        x-model="integerValue"
+        id="price"
+        x-model="maskedValue"
         x-ref="input"
-        @input="mounted()"
-        inputmode="numeric" 
+        inputmode="numeric"
+        @input="handleChange"
         class="w-full placeholder-gray-400 border-0 outline-none ring-0 focus:ring-0 focus:outline-none bg-transparent p-0"
     >
 
     <div>
-        Integer: <span x-text="maskedValue"></span>
+        Integer: <span x-text="integerValue"></span>
     </div>
 </div>
