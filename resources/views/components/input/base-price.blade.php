@@ -27,9 +27,18 @@
             },
             handleChange({target: input}) {
                 const integerValue = input.value.replaceAll(/\D/g, '')
-                this.maskedValue = this.mask(+integerValue)
-                this.integerValue = +integerValue / 100
-            }
+                this.integerValue = integerValue
+                this.maskedValue = this.mask(this.integerValue)
+            
+                // this.getCursorPosition(input)
+            },
+            // getCursorPosition(input){
+            //     const previusPosition = input.selectionStart
+            //     this.$nextTick(() => {
+            //         input.selectionEnd = previusPosition
+            //         input.selectionStart = input.selectionEnd
+            //     })
+            // }
         }
     }
 </script>
