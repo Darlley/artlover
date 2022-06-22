@@ -3,7 +3,7 @@
 ])
 <div x-data="basePrice()" x-init="mounted()">
     <input 
-        x-on:focus="$dispatch('focused')" 
+        x-on:focus="$dispatch('focused')"
         x-on:blur="$dispatch('blured')"
         {{ $attributes->except(['wire:model']) }} type="text" id="price" x-model="maskedValue" x-ref="input"
         inputmode="numeric" @input="handleChange"

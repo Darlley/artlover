@@ -37,7 +37,9 @@
                         <x-input-error for="product.price" />
                     </div>
                     
-                    <x-input.price placeholder="$ Price" />
+                    <div>
+                        <x-input.price placeholder="$ Price" />
+                    </div>
                 </div>
 
                 <div class="mt-4 mb-2">
