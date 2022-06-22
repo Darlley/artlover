@@ -108,37 +108,6 @@
                         <h4 class="text-gray-700 text-xl">With Others</h4>
                     </div>
 
-                    <!-- <div class="bg-white rounded-lg overflow-hidden p-2">
-                        <div class="grid grid-cols-4">
-                            <div class="col-span-2">
-                                <img src="{{ asset('img/muckup.jpg') }}" alt="" class="h-20 cursor-pointer object-cover rounded-lg hover:scale-90 transition-all duration-200">
-                                <x-input type="text" placeholder="Name" class="w-min bg-transparent" />
-                            </div>
-                            <div class="">
-                                <x-input type="number" placeholder="$ price" />
-                            </div>
-                            <div class="">
-                                <x-input type="number" placeholder="Quantiy" />
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-4">
-                            <div class="col-span-2 flex">
-                                <img src="{{ asset('img/muckup.jpg') }}" alt="" class="h-20 cursor-pointer object-cover rounded-lg hover:scale-90 transition-all duration-200">
-                                <x-input type="text" placeholder="Name" />
-                            </div>
-                            <div class="">
-                                <x-input type="number" placeholder="$ price" />
-                            </div>
-                            <div class="flex">
-                                <x-input type="number" placeholder="Quantiy" />
-                                <div>
-                                    excluir
-                                </div>
-                            </div>
-                        </div>
-                        <x-button class="rounded-t-none w-full py-4 mt-2">+ Add Ariation</x-button>
-                    </div> -->
-
                     <div class="rounded-lg overflow-hidden">
                         <div class="grid grid-cols-4 bg-white">
                             <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
