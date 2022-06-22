@@ -37,7 +37,6 @@
                         <x-input-error for="product.price" />
 
                         <x-input.base-price placeholder="$ Price" />
-                        <x-input.base-price placeholder="$ Price" />
                     </div>
                 </div>
 
