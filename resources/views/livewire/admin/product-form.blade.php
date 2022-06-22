@@ -33,11 +33,11 @@
                     <x-input type="text" placeholder="Categories" wire:model.defer='prodcut.categories'/>
                     
                     <div>
-                        <x-input type="number" placeholder="$ Price" wire:model.defer='prodcut.price'/>
+                        <x-input.price type="number" placeholder="$ Price" wire:model.defer='prodcut.price'/>
                         <x-input-error for="product.price" />
-
-                        <x-input.base-price placeholder="$ Price" />
                     </div>
+                    
+                    <x-input.price placeholder="$ Price" />
                 </div>
 
                 <div class="mt-4 mb-2">

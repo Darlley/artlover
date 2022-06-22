@@ -1,13 +1,15 @@
+@props([
+    'padding' => 'p-0'
+])
 <div x-data="basePrice()" x-init="mounted()">
-    <input {{ $attributes->except(['wire:model']) }} type="text" id="price" x-model="maskedValue" x-ref="input"
+    <input 
+        x-on:focus="$dispatch('focused')" 
+        x-on:blur="$dispatch('blured')"
+        {{ $attributes->except(['wire:model']) }} type="text" id="price" x-model="maskedValue" x-ref="input"
         inputmode="numeric" @input="handleChange"
-        class="w-full placeholder-gray-400 border-0 outline-none ring-0 focus:ring-0 focus:outline-none bg-transparent p-0">
-
-    <div>
-        Integer: <span x-text="integerValue"></span>
-    </div>
+        class="{{ $padding }} w-full placeholder-gray-400 border-0 outline-none ring-0 focus:ring-0 focus:outline-none bg-transparent p-0"
+    />
 </div>
-
 
 <script>
     function basePrice() {
@@ -29,7 +31,6 @@
                 const integerValue = input.value.replaceAll(/\D/g, '')
                 this.integerValue = integerValue
                 this.maskedValue = this.mask(this.integerValue)
-            
                 // this.getCursorPosition(input)
             },
             // getCursorPosition(input){
