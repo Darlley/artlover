@@ -41,8 +41,14 @@ class ProductForm extends Component
         ]);
     }
 
+    public function removeTemporaryImage($image){
+        array_splice($this->temporaryImages, $image,1);
+    }
+
     public function updatingTemporaryImages(){
         $this->previusImages = $this->temporaryImages;
+
+
     }
     public function updatedTemporaryImages(){
         $this->temporaryImages = collect([
