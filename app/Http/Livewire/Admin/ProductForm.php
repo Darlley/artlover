@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
+use Illuminate\support\Str;
 use Livewire\Component;
 use Livewire\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
@@ -24,6 +24,9 @@ class ProductForm extends Component
     */
     public $previusImages = [];
 
+    public $variations = [];
+
+
     protected $messages = [
         'required' => "O campo :attribute é obrigatório ☝️"
     ];
@@ -39,6 +42,16 @@ class ProductForm extends Component
         $this->product = new Product([
             'price' => 1000
         ]);
+    }
+
+    public function addVariation(){
+        $this->variations[] = [
+            'id' => Str::random(),
+            'image' => null,
+            'name' => null,
+            'price' => null,
+            'quantity' => null,
+        ];
     }
 
     public function removeTemporaryImage($image){
