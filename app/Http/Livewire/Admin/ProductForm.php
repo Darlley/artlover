@@ -60,8 +60,6 @@ class ProductForm extends Component
 
     public function updatingTemporaryImages(){
         $this->previusImages = $this->temporaryImages;
-
-
     }
     public function updatedTemporaryImages(){
         $this->temporaryImages = collect([

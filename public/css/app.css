@@ -2109,6 +2109,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
+.hover\:bg-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
 .hover\:bg-opacity-100:hover {
   --tw-bg-opacity: 1;
 }
@@ -2293,9 +2297,6 @@ select {
 }
 .disabled\:opacity-25:disabled {
   opacity: 0.25;
-}
-.group:hover .group-hover\:opacity-50 {
-  opacity: 0.5;
 }
 .group:hover .group-hover\:opacity-80 {
   opacity: 0.8;

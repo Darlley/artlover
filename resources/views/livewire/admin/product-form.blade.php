@@ -15,7 +15,7 @@
                 @endforeach
                 <button x-on:click="$refs.inputUpdaloadedFile.click()" class="flex items-center justify-center p-4 bg-opacity-60 bg-white rounded-lg hover:bg-opacity-100 cursor-pointer hover:scale-90 transition-all duration-200 h-full">
                     <x-icon.plus class="text-gray-500 w-12" />
-                    <input wire:model="temporaryImages" x-ref="inputUpdaloadedFile" type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" multiple maxlength="3" class="hidden">
+                    <input wire:model="temporaryImages" x-ref="inputUpdaloadedFile" type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" multiple class="hidden">
                 </button>
             </div>
         </div>
