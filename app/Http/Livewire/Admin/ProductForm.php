@@ -21,7 +21,9 @@ class ProductForm extends Component
     
     public function mount()
     {
-        $this->product = new Product(); 
+        $this->product = new Product([
+            'price' => 1000
+        ]); 
     }
 
     public function save()

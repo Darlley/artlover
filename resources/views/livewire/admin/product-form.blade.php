@@ -26,19 +26,15 @@
                     </div>
 
                     <div>
-                        <x-input type="text" placeholder="Description" wire:model.defer='prodcut.description'/>
+                        <x-input type="text" placeholder="Description" wire:model.defer='product.description'/>
                         <x-input-error for="product.description" />
                     </div>
 
-                    <x-input type="text" placeholder="Categories" wire:model.defer='prodcut.categories'/>
+                    <x-input type="text" placeholder="Categories" wire:model.defer='product.categories'/>
                     
                     <div>
-                        <x-input.price type="number" placeholder="$ Price" wire:model.defer='prodcut.price'/>
+                        <x-input.price wire:model.defer='product.price'/>
                         <x-input-error for="product.price" />
-                    </div>
-                    
-                    <div>
-                        <x-input.price placeholder="$ Price" />
                     </div>
                 </div>
 
