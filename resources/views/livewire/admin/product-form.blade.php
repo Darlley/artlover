@@ -52,10 +52,15 @@
                     @endisset
 
                     <div class="rounded-lg overflow-hidden">
-                        <div x-data x-init="
-                                Sortablejs.create($el, {
+                        <div x-data x-init="Sortablejs.create($el, {
                                 handle: '.cursor-move',
-                                animation: 150
+                                animation: 150,
+                                onSort(variations){
+                                    Array.from(variations.to.children).map(variation => {
+                                        const variationsOrder = variation.getAttribute('variation-id')
+                                        console.log(variationsOrder)
+                                    })
+                                }
                             })
                         ">
                             @if(count($variations) <= 0)
@@ -85,7 +90,6 @@
                                 <livewire:products.variation-form
                                     wire:key="variation-form-{{ $variation['id'] }}"
                                     :variation="$variation"
-                                    :variation-id="$variation['id']"
                                 />
                             @endforeach
                         </div>

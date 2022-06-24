@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 bg-white" x-data>
+<div class="grid grid-cols-4 bg-white" variation-id="{{ $variation['id'] }}" x-data>
     <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
         <div class="w-12 h-12 bg-gray-100 hover:bg-gray-200 cursor-pointer flex items-center rounded-lg justify-center">
             <button type="button" class="w-full h-full" x-on:click="$refs.addImageVariation.click()">
