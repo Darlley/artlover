@@ -94,6 +94,8 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 33       | Removing Product Images                            | ✔️ |
 | 34       | Adding Image to Variations                         | ✔️ |
 | 35       | Remove Variation                                   | ✔️ |
+| 36       | Sorting Variations With Sortablejs                 | ✔️ |
+| 37       | Commit Changes                                     | ✔️ |
 
 | Modulo 3 | Purchase Flow                         | ❌ |
 |----------|---------------------------------------|---|
