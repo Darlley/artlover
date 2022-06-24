@@ -25,6 +25,7 @@ class ProductForm extends Component
     public $previusImages = [];
 
     public $variations = [];
+    public $shippings = [];
     
     protected $listeners = [
         'removeVariation'
@@ -54,6 +55,13 @@ class ProductForm extends Component
             'quantity' => null,
             'position' => 0
         ])->toArray();
+
+        $this->shippings = collect()->times(3)->map(fn ($index) => [
+            'id' => Str::random(),
+            'name' => 'Lorem Ipsum ' . $index,
+            'price' => 1000,
+            'others' => 500
+        ])->toArray();
     }
 
     public function updateVariationsPositions($variationsOrder){
@@ -75,6 +83,15 @@ class ProductForm extends Component
             'name' => null,
             'price' => null,
             'quantity' => null,
+        ];
+    }
+
+    public function addShipping(){
+        $this->shippings[] = [
+            'id' => Str::random(),
+            'name' => 'Lorem Ipsum',
+            'price' => null,
+            'others' => null
         ];
     }
     

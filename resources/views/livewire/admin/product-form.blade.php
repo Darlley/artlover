@@ -105,38 +105,33 @@
                     </div>
 
                     <div class="rounded-lg overflow-hidden">
-                        <div class="grid grid-cols-4 bg-white">
-                            <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
-                                <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name e.g. Fedex" />
-                            </div>
-                            <div class="flex items-center pr-6">
-                                <x-input type="number" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
-                            </div>
-                            <div class="grid grid-cols-4 items-center justify-center">
-                                <x-input type="number" class="col-span-3 bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
-                                <div class="flex items-center justify-center pr-2 gap-1">
-                                    <x-icon.trash class="w-6 h-6 text-red-300 hover:text-red-500 transition-colors cursor-pointer" />
-                                    <x-icon.drag-move class="w-6 h-6 text-gray-300 hover:text-gray-500 transition-colors cursor-move" />
+                        @if (count($shippings) <= 0)
+                            <div class="grid grid-cols-4 bg-white pointer-events-none opacity-20">
+                                <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
+                                    <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name e.g. Fedex" />
+                                </div>
+                                <div class="flex items-center pr-6">
+                                    <x-input type="number" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="grid grid-cols-4">
+                                        <x-input type="number" class="col-span-3 bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
+                                        <div class="flex items-center justify-center pr-2 gap-1">
+                                            <x-icon.trash class="w-6 h-6 text-red-300 hover:text-red-500 transition-colors cursor-pointer" />
+                                            <x-icon.drag-move class="w-6 h-6 text-gray-300 hover:text-gray-500 transition-colors cursor-move" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="grid grid-cols-4 bg-white">
-                            <div class="col-span-2 flex items-center px-2 py-1">
-                                <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name e.g. Fedex" />
-                            </div>
-                            <div class="flex items-center pr-6">
-                                <x-input type="number" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
-                            </div>
-                            <div class="grid grid-cols-4 items-center justify-center">
-                                <x-input type="number" class="col-span-3 bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
-                                <div class="flex items-center justify-center pr-2 gap-1">
-                                    <x-icon.trash class="w-6 h-6 text-red-300 hover:text-red-500 transition-colors cursor-pointer" />
-                                    <x-icon.drag-move class="w-6 h-6 text-gray-300 hover:text-gray-500 transition-colors cursor-move" />
-                                </div>
-                            </div>
-                        </div>
-                        <x-button class="py-4 rounded-t-none w-full">+ Add Shipping</x-button>
+                        @endif
+
+                        @foreach($shippings as $shipping)
+                            <livewire:products.shipping-form :shipping="$shipping" wire:key="shipping-form-{{ $shipping['id'] }}" />
+                        @endforeach
+
+                        <x-button type="button" class="py-4 rounded-t-none w-full" wire:click='addShipping'>+ Add Shipping</x-button>
                     </div>
+
                 </div>
 
                 <div class="flex gap-4 mt-4">
