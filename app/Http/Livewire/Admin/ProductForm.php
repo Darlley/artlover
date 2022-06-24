@@ -25,7 +25,10 @@ class ProductForm extends Component
     public $previusImages = [];
 
     public $variations = [];
-
+    
+    protected $listeners = [
+        'removeVariation'
+    ];
 
     protected $messages = [
         'required' => "O campo :attribute é obrigatório ☝️"
@@ -44,6 +47,7 @@ class ProductForm extends Component
         ]);
     }
 
+    
     public function addVariation(){
         $this->variations[] = [
             'id' => Str::random(),
@@ -53,6 +57,10 @@ class ProductForm extends Component
             'quantity' => null,
         ];
     }
+    
+    public function removeVariation($id){
+        $this->variations = collect($this->variations)->filter(fn ($variation) => $variation['id'] !== $id)->toArray();
+    }
 
     public function removeTemporaryImage($image){
         array_splice($this->temporaryImages, $image,1);
@@ -61,6 +69,7 @@ class ProductForm extends Component
     public function updatingTemporaryImages(){
         $this->previusImages = $this->temporaryImages;
     }
+
     public function updatedTemporaryImages(){
         $this->temporaryImages = collect([
             ...$this->previusImages,

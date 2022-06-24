@@ -932,6 +932,9 @@ select {
 .prose > :where(:last-child):not(:where([class~="not-prose"] *)) {
   margin-bottom: 0;
 }
+.pointer-events-none {
+  pointer-events: none;
+}
 .fixed {
   position: fixed;
 }
@@ -1286,6 +1289,9 @@ select {
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.cursor-move {
+  cursor: move;
 }
 .select-none {
   -webkit-user-select: none;
@@ -1942,6 +1948,9 @@ select {
 .opacity-80 {
   opacity: 0.8;
 }
+.opacity-20 {
+  opacity: 0.2;
+}
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -2147,6 +2156,10 @@ select {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 .hover\:opacity-100:hover {
   opacity: 1;
