@@ -10,7 +10,7 @@
                 <input wire:model='variation.image' x-ref="addImageVariation" type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" class="hidden">
             </button>
         </div>
-        <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name" value="{{ $variation['id'] }}"/>
+        <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name" value="{{ $variation['name'] }}"/>
     </div>
     <div class="flex items-center pr-6">
         <x-input type="number" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />

@@ -45,6 +45,14 @@ class ProductForm extends Component
         $this->product = new Product([
             'price' => 1000
         ]);
+
+        $this->variations = collect()->times(3)->map(fn ($index) => [
+            'id' => Str::random(),
+            'image' => null,
+            'name' => 'Lorem Ipsum ' . $index,
+            'price' => null ,
+            'quantity' => null,
+        ])->toArray();
     }
 
     

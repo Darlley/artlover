@@ -52,35 +52,43 @@
                     @endisset
 
                     <div class="rounded-lg overflow-hidden">
-                        @if(count($variations) <= 0)
-                        <div class="grid grid-cols-4 bg-white opacity-20 pointer-events-none" x-data>
-                            <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
-                                <div class="w-12 h-12 bg-gray-100 hover:bg-gray-200 cursor-pointer flex items-center rounded-lg justify-center">
-                                    <button type="button" class="w-full h-full" disabled>
-                                        <x-icon.camera class="w-full h-full p-2 text-gray-400" />
-                                        <input type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" class="hidden">
-                                    </button>
+                        <div x-data x-init="
+                                Sortablejs.create($el, {
+                                handle: '.cursor-move',
+                                animation: 150
+                            })
+                        ">
+                            @if(count($variations) <= 0)
+                                <div class="grid grid-cols-4 bg-white opacity-20 pointer-events-none" x-data>
+                                    <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
+                                        <div class="w-12 h-12 bg-gray-100 hover:bg-gray-200 cursor-pointer flex items-center rounded-lg justify-center">
+                                            <button type="button" class="w-full h-full" disabled>
+                                                <x-icon.camera class="w-full h-full p-2 text-gray-400" />
+                                                <input type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" class="hidden">
+                                            </button>
+                                        </div>
+                                        <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name" />
+                                    </div>
+                                    <div class="flex items-center pr-6">
+                                        <x-input type="number" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
+                                    </div>
+                                    <div class="grid grid-cols-4 items-center justify-center">
+                                        <x-input type="number" class="col-span-3 bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Quantity" />
+                                        <div class="flex items-center justify-center pr-2 gap-1">
+                                            <x-icon.trash class="w-6 h-6 text-red-300 hover:text-red-500 transition-colors cursor-pointer" />
+                                            <x-icon.drag-move class="w-6 h-6 text-gray-300 hover:text-gray-500 transition-colors cursor-move" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name" />
-                            </div>
-                            <div class="flex items-center pr-6">
-                                <x-input type="number" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="$ Price" />
-                            </div>
-                            <div class="grid grid-cols-4 items-center justify-center">
-                                <x-input type="number" class="col-span-3 bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Quantity" />
-                                <div class="flex items-center justify-center pr-2 gap-1">
-                                    <x-icon.trash class="w-6 h-6 text-red-300 hover:text-red-500 transition-colors cursor-pointer" />
-                                    <x-icon.drag-move class="w-6 h-6 text-gray-300 hover:text-gray-500 transition-colors cursor-move" />
-                                </div>
-                            </div>
+                            @endif
+                            @foreach ($variations as $index => $variation)
+                                <livewire:products.variation-form
+                                    wire:key="variation-form-{{ $variation['id'] }}"
+                                    :variation="$variation"
+                                    :variation-id="$variation['id']"
+                                />
+                            @endforeach
                         </div>
-                        @endif
-                        @foreach ($variations as $index => $variation)                
-                            <livewire:products.variation-form
-                                wire:key="variation-form-{{ $variation['id'] }}"
-                                :variation="$variation"
-                            />
-                        @endforeach
                         <x-button class="py-4 rounded-t-none w-full" type="button" wire:click='addVariation'>+ Add Variation</x-button>
                     </div>
                 </div>

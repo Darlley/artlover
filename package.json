@@ -24,6 +24,7 @@
     "dependencies": {
         "@stripe/stripe-js": "^1.28.0",
         "@tailwindcss/line-clamp": "^0.4.0",
-        "currency.js": "^2.0.4"
+        "currency.js": "^2.0.4",
+        "sortablejs": "^1.15.0"
     }
 }
