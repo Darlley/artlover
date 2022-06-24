@@ -57,17 +57,43 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 31       | Confirm Payment Teste                 | ✔️ |
 | 32       | Finish, Clean Up and Commit           | ✔️ |
 
-| Modulo 2 | Admin Produc List                     | ❌ |
-|----------|---------------------------------------|---|
-| 1        | Starting A New Task                   | ✔️ |
-| 2        | Top Admin Navigation                  | ✔️ |
-| 3        | Page Title and Actions                | ✔️ |
-| 4        | Product Card List                     | ✔️ |
-| 5        | Commit Changes                        | ✔️ |
-| 6        | Define Test Cases                     | ✔️ |
-| 7        | Protecting Routes                     | ✔️ |
-| 8        | IsAdmin Middleware                    | ✔️ |
-| 9        | Product Model, Factory and Migration  | ✔️ |
+| Modulo 2 | Admin Produc List                                  | ❌ |
+|----------|----------------------------------------------------|---|
+| 1        | Starting A New Task                                | ✔️ |
+| 2        | Top Admin Navigation                               | ✔️ |
+| 3        | Page Title and Actions                             | ✔️ |
+| 4        | Product Card List                                  | ✔️ |
+| 5        | Commit Changes                                     | ✔️ |
+| 6        | Define Test Cases                                  | ✔️ |
+| 7        | Protecting Routes                                  | ✔️ |
+| 8        | IsAdmin Middleware                                 | ✔️ |
+| 9        | Product Model, Factory and Migration               | ✔️ |
+| 10       | Product Pagination                                 | ✔️ |
+| 11       | Product Search By Name                             | ✔️ |
+| 12       | Product Search By Price                            | ✔️ |
+| 13       | Product Search By Description                      | ✔️ |
+| 14       | Filters                                            | ✔️ |
+| 15       | Pagination, Query String and Image Size            | ✔️ |
+| 16       | Tailwind Line Clamp and Commit                     | ✔️ |
+| 17       | Frontend changes                                   | ✔️ |
+| 18       | Page Title Componens                               | ✔️ |
+| 19       | Working Navigation                                 | ✔️ |
+| 20       | Static Product Image Gallery                       | ✔️ |
+| 21       | Static Basic Product Form                          | ✔️ |
+| 22       | Static Basic Variations                            | ✔️ |
+| 23       | Static Product Shippig                             | ✔️ |
+| 24       | Commit Static Form Page                            | ✔️ |
+| 25       | Livewire Basic Form With Validations               | ✔️ |
+| 26       | Starting Input Price With Masks                    | ✔️ |
+| 27       | Alpine Intro                                       | ✔️ |
+| 28       | Implement Input Price Mask                         | ✔️ |
+| 29       | Refactoring Alpine Component                       | ✔️ |
+| 30       | Creating Blade Component Price                     | ✔️ |
+| 31       | Connecting Alpine Blade Component With Livewire    | ✔️ |
+| 32       | Uploading Product Images                           | ✔️ |
+| 33       | Removing Product Images                            | ✔️ |
+| 34       | Adding Image to Variations                         | ✔️ |
+| 35       | Remove Variation                                   | ✔️ |
 
 | Modulo 3 | Purchase Flow                         | ❌ |
 |----------|---------------------------------------|---|
