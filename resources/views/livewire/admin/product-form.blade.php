@@ -56,10 +56,10 @@
                                 handle: '.cursor-move',
                                 animation: 150,
                                 onSort(variations){
-                                    Array.from(variations.to.children).map(variation => {
-                                        const variationsOrder = variation.getAttribute('variation-id')
-                                        console.log(variationsOrder)
+                                    const variationsOrder = Array.from(variations.to.children).map(variation => {
+                                        return variation.getAttribute('variation-id')
                                     })
+                                    @this.updateVariationsPositions(variationsOrder)
                                 }
                             })
                         ">

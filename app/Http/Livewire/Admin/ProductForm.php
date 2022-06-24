@@ -52,9 +52,21 @@ class ProductForm extends Component
             'name' => 'Lorem Ipsum ' . $index,
             'price' => null ,
             'quantity' => null,
+            'position' => 0
         ])->toArray();
     }
 
+    public function updateVariationsPositions($variationsOrder){
+
+        $newVariations = [];
+        foreach($variationsOrder as $index => $id){
+            $variation = collect($this->variations)->where('id',$id)->first();
+            $variation['position'] = $index;
+            $newVariations[] = $variation;
+        }
+
+        $this->variations = $newVariations;
+    }
     
     public function addVariation(){
         $this->variations[] = [
