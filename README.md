@@ -96,6 +96,9 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 35       | Remove Variation                                   | ✔️ |
 | 36       | Sorting Variations With Sortablejs                 | ✔️ |
 | 37       | Commit Changes                                     | ✔️ |
+| 38       | Adding Product Shippings                           | ✔️ |
+| 39       | Remove and Sort Shippings                          | ✔️ |
+| 40       | Commit Changes For Variations and Shippings        | ✔️ |
 
 | Modulo 3 | Purchase Flow                         | ❌ |
 |----------|---------------------------------------|---|
