@@ -28,7 +28,7 @@ class ProductForm extends Component
     public $shippings = [];
     
     protected $listeners = [
-        'removeVariation'
+        'removeVariation','removeShipping'
     ];
 
     protected $messages = [
@@ -50,17 +50,20 @@ class ProductForm extends Component
         $this->variations = collect()->times(3)->map(fn ($index) => [
             'id' => Str::random(),
             'image' => null,
-            'name' => 'Lorem Ipsum ' . $index,
+            'name' => 'Variation ' . $index,
             'price' => null ,
             'quantity' => null,
-            'position' => 0
+            'position' => $index - 1
         ])->toArray();
 
         $this->shippings = collect()->times(3)->map(fn ($index) => [
             'id' => Str::random(),
-            'name' => 'Lorem Ipsum ' . $index,
+            'name' => 'Shipping ' . $index,
+            'standalone_price' => 1000,
+            'withothers_price' => 700,
             'price' => 1000,
-            'others' => 500
+            'others' => 500,
+            'position' => $index - 1
         ])->toArray();
     }
 
@@ -75,12 +78,24 @@ class ProductForm extends Component
 
         $this->variations = $newVariations;
     }
+
+    public function updateShippingPositions($shippingsOrder){
+
+        $newShippings = [];
+        foreach($shippingsOrder as $index => $id){
+            $shipping = collect($this->shippings)->where('id',$id)->first();
+            $shipping['position'] = $index;
+            $newShippings[] = $shipping;
+        }
+
+        $this->shippings = $newShippings;
+    }
     
     public function addVariation(){
         $this->variations[] = [
             'id' => Str::random(),
             'image' => null,
-            'name' => null,
+            'name' => 'Variation '. count($this->variations) + 1,
             'price' => null,
             'quantity' => null,
         ];
@@ -89,14 +104,19 @@ class ProductForm extends Component
     public function addShipping(){
         $this->shippings[] = [
             'id' => Str::random(),
-            'name' => 'Lorem Ipsum',
+            'name' => 'Shipping '. count($this->shippings) + 1,
+            'standalone_price' => 1000,
+            'withothers_price' => 700,
             'price' => null,
-            'others' => null
+            'others' => null,
         ];
     }
     
     public function removeVariation($id){
         $this->variations = collect($this->variations)->filter(fn ($variation) => $variation['id'] !== $id)->toArray();
+    }
+    public function removeShipping($id){
+        $this->shippings = collect($this->shippings)->filter(fn ($shipping) => $shipping['id'] !== $id)->toArray();
     }
 
     public function removeTemporaryImage($image){
