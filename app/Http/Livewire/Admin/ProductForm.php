@@ -36,7 +36,7 @@ class ProductForm extends Component
     ];
 
     protected $rules = [
-        'product.name' => 'required',
+        'product.name' => 'required|max:255',
         'product.description' => 'required',
         'product.price' => 'required'
     ];
