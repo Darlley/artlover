@@ -44,7 +44,24 @@ it('required description field', function(){
 });
 
 test('categories as optional');
-it('required price field');
+
+it('price field has min of 1 dolar', function(){
+    livewire(ProductForm::class)
+        ->set('product.price', '99')
+        ->call('save')
+        ->assertHasErrors('product.price')
+        ->assertSee(trans('validation.min.numeric', ['attribute' => 'price', 'min' => 100]))
+        ->assertSee('The price must be at least $ 1.00');
+});
+
+it('required price field', function(){
+    livewire(ProductForm::class)
+        ->set('product.price', '')
+        ->call('save')
+        ->assertHasErrors('product.price')
+        ->assertSee(trans('validation.required', ['attribute' => 'price']));
+});
+
 it('stores in database as draft');
 it('keeps status if already published');
 
