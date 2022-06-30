@@ -34,12 +34,13 @@ class ProductForm extends Component
     protected $messages = [
         'required' => "O campo :attribute é obrigatório ☝️",
         'product.price.min' => "The price must be at least $ 1.00",
+        'product.price.max' => "The price must be at most $ 1,000.000.00",
     ];
 
     protected $rules = [
         'product.name' => 'required|max:255',
         'product.description' => 'required',
-        'product.price' => 'required|min:100'
+        'product.price' => 'required|min:100|max:100000000'
     ];
 
     public function mount()

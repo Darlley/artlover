@@ -45,21 +45,30 @@ it('required description field', function(){
 
 test('categories as optional');
 
-it('price field has min of 1 dolar', function(){
-    livewire(ProductForm::class)
-        ->set('product.price', '99')
-        ->call('save')
-        ->assertHasErrors('product.price')
-        ->assertSee(trans('validation.min.numeric', ['attribute' => 'price', 'min' => 100]))
-        ->assertSee('The price must be at least $ 1.00');
-});
-
 it('required price field', function(){
     livewire(ProductForm::class)
         ->set('product.price', '')
         ->call('save')
         ->assertHasErrors('product.price')
         ->assertSee(trans('validation.required', ['attribute' => 'price']));
+});
+
+it('price field has min of 1 dolar', function(){
+    livewire(ProductForm::class)
+        ->set('product.price', 100)
+        ->call('save')
+        ->assertHasErrors('product.price')
+        ->assertSee(trans('validation.min.numeric', ['attribute' => 'price', 'min' => 100]))
+        ->assertSee('The price must be at least $ 1.00');
+});
+
+it('price field has max of 1000000 dolar', function(){
+    livewire(ProductForm::class)
+        ->set('product.price', 1_000_001_00)
+        ->call('save')
+        ->assertHasErrors('product.price')
+        ->assertSee(trans('validation.min.numeric', ['attribute' => 'price', 'min' => 100]))
+        ->assertSee('The price must be at least $ 1,000.000.00');
 });
 
 it('stores in database as draft');
