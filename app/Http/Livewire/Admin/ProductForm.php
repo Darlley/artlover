@@ -42,11 +42,12 @@ class ProductForm extends Component
         'product.description' => 'required',
         'product.price' => 'required|min:100|max:100000000'
     ];
-
+    
     public function mount()
     {
-        $this->product = new Product([
-            'price' => 1000
+        
+        $this->product ??= new Product([
+            'price' => null
         ]);
 
         $this->variations = collect()->times(3)->map(fn ($index) => [
@@ -67,6 +68,7 @@ class ProductForm extends Component
             'others' => 500,
             'position' => $index - 1
         ])->toArray();
+
     }
 
     public function updateVariationsPositions($variationsOrder){
@@ -139,6 +141,11 @@ class ProductForm extends Component
     public function save()
     {
         $this->validate();
+        $this->product->save();
+
+        if($this->product->wasRecentlyCreated){
+            return redirect(route('admin.products.edit', $this->product));
+        }
     }
     
     public function render()

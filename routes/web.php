@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
 Route::middleware(['auth:sanctum','verified','admin'])->prefix('admin')->name('admin.')->group(function(){
     Route::get("products", ProductsList::class)->name('products');
     Route::get("products/create", ProductForm::class)->name('products.create');
+    Route::get("products/{product}/edit", ProductForm::class)->name('products.edit');
 });
 
 Route::get("/checkout", CheckoutPage::class)->name("checkout");
