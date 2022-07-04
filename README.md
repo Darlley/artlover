@@ -57,48 +57,69 @@ Este é um projeto desenvolvido no curso **[TDD com Tall Stack](https://pay.kiwi
 | 31       | Confirm Payment Teste                 | ✔️ |
 | 32       | Finish, Clean Up and Commit           | ✔️ |
 
-| Modulo 2 | Admin Produc List                                  | ❌ |
-|----------|----------------------------------------------------|---|
-| 1        | Starting A New Task                                | ✔️ |
-| 2        | Top Admin Navigation                               | ✔️ |
-| 3        | Page Title and Actions                             | ✔️ |
-| 4        | Product Card List                                  | ✔️ |
-| 5        | Commit Changes                                     | ✔️ |
-| 6        | Define Test Cases                                  | ✔️ |
-| 7        | Protecting Routes                                  | ✔️ |
-| 8        | IsAdmin Middleware                                 | ✔️ |
-| 9        | Product Model, Factory and Migration               | ✔️ |
-| 10       | Product Pagination                                 | ✔️ |
-| 11       | Product Search By Name                             | ✔️ |
-| 12       | Product Search By Price                            | ✔️ |
-| 13       | Product Search By Description                      | ✔️ |
-| 14       | Filters                                            | ✔️ |
-| 15       | Pagination, Query String and Image Size            | ✔️ |
-| 16       | Tailwind Line Clamp and Commit                     | ✔️ |
-| 17       | Frontend changes                                   | ✔️ |
-| 18       | Page Title Componens                               | ✔️ |
-| 19       | Working Navigation                                 | ✔️ |
-| 20       | Static Product Image Gallery                       | ✔️ |
-| 21       | Static Basic Product Form                          | ✔️ |
-| 22       | Static Basic Variations                            | ✔️ |
-| 23       | Static Product Shippig                             | ✔️ |
-| 24       | Commit Static Form Page                            | ✔️ |
-| 25       | Livewire Basic Form With Validations               | ✔️ |
-| 26       | Starting Input Price With Masks                    | ✔️ |
-| 27       | Alpine Intro                                       | ✔️ |
-| 28       | Implement Input Price Mask                         | ✔️ |
-| 29       | Refactoring Alpine Component                       | ✔️ |
-| 30       | Creating Blade Component Price                     | ✔️ |
-| 31       | Connecting Alpine Blade Component With Livewire    | ✔️ |
-| 32       | Uploading Product Images                           | ✔️ |
-| 33       | Removing Product Images                            | ✔️ |
-| 34       | Adding Image to Variations                         | ✔️ |
-| 35       | Remove Variation                                   | ✔️ |
-| 36       | Sorting Variations With Sortablejs                 | ✔️ |
-| 37       | Commit Changes                                     | ✔️ |
-| 38       | Adding Product Shippings                           | ✔️ |
-| 39       | Remove and Sort Shippings                          | ✔️ |
-| 40       | Commit Changes For Variations and Shippings        | ✔️ |
+| Modulo 2 | Admin Produc List                                              | ❌ |
+|----------|----------------------------------------------------------------|---|
+| 1        | Starting A New Task                                            | ✔️ |
+| 2        | Top Admin Navigation                                           | ✔️ |
+| 3        | Page Title and Actions                                         | ✔️ |
+| 4        | Product Card List                                              | ✔️ |
+| 5        | Commit Changes                                                 | ✔️ |
+| 6        | Define Test Cases                                              | ✔️ |
+| 7        | Protecting Routes                                              | ✔️ |
+| 8        | IsAdmin Middleware                                             | ✔️ |
+| 9        | Product Model, Factory and Migration                           | ✔️ |
+| 10       | Product Pagination                                             | ✔️ |
+| 11       | Product Search By Name                                         | ✔️ |
+| 12       | Product Search By Price                                        | ✔️ |
+| 13       | Product Search By Description                                  | ✔️ |
+| 14       | Filters                                                        | ✔️ |
+| 15       | Pagination, Query String and Image Size                        | ✔️ |
+| 16       | Tailwind Line Clamp and Commit                                 | ✔️ |
+| 17       | Frontend changes                                               | ✔️ |
+| 18       | Page Title Componens                                           | ✔️ |
+| 19       | Working Navigation                                             | ✔️ |
+| 20       | Static Product Image Gallery                                   | ✔️ |
+| 21       | Static Basic Product Form                                      | ✔️ |
+| 22       | Static Basic Variations                                        | ✔️ |
+| 23       | Static Product Shippig                                         | ✔️ |
+| 24       | Commit Static Form Page                                        | ✔️ |
+| 25       | Livewire Basic Form With Validations                           | ✔️ |
+| 26       | Starting Input Price With Masks                                | ✔️ |
+| 27       | Alpine Intro                                                   | ✔️ |
+| 28       | Implement Input Price Mask                                     | ✔️ |
+| 29       | Refactoring Alpine Component                                   | ✔️ |
+| 30       | Creating Blade Component Price                                 | ✔️ |
+| 31       | Connecting Alpine Blade Component With Livewire                | ✔️ |
+| 32       | Uploading Product Images                                       | ✔️ |
+| 33       | Removing Product Images                                        | ✔️ |
+| 34       | Adding Image to Variations                                     | ✔️ |
+| 35       | Remove Variation                                               | ✔️ |
+| 36       | Sorting Variations With Sortablejs                             | ✔️ |
+| 37       | Commit Changes                                                 | ✔️ |
+| 38       | Adding Product Shippings                                       | ✔️ |
+| 39       | Remove and Sort Shippings                                      | ✔️ |
+| 40       | Commit Changes For Variations and Shippings                    | ✔️ |
+| 41       | TDD , Pest PHP and Test Cases                                  | ✔️ |
+| 42       | Defining Test Cases Before Codign                              | ✔️ |
+| 43       | TDD Checking Admin to Save Product                             | ✔️ |
+| 44       | TDD For Form Field Validations                                 | ✔️ |
+| 45       | TDD For Princing Field                                         | ✔️ |
+| 46       | TDD For Storing Data in Database                               | ✔️ |
+| 47       | Small Adjustments on Product Save and List                     | ✔️ |
+| 48       | Commit Changes                                                 | ✔️ |
+| 49       | Upgrading Livewire Package to Fix A Bug                        | ❌ |
+| 50       | TDD With Image Upload With Livewire                            | ❌ |
+| 51       | Implementing Uploading Images With Livewire On Product Form    | ❌ |
+| 52       | Separating Creation From Editing Product                       | ❌ |
+| 53       | Uploading Variation Images                                     | ❌ |
+| 54       | Implementing CRUD of Shippings On Product Form                 | ❌ |
+| 55       | Tests For Variations And Shippings                             | ❌ |
+| 56       | Categories Modal                                               | ❌ |
+| 57       | Implementing Modal of Categories                               | ❌ |
+| 58       | Add Relationship Between Categories And Products               | ❌ |
+| 59       | Finishing Categories Modal                                     | ❌ |
+| 60       | Git Rebase                                                     | ❌ |
+| 61       | Concluding With Github Pull Request                            | ❌ |
 
 | Modulo 3 | Purchase Flow                         | ❌ |
 |----------|---------------------------------------|---|
