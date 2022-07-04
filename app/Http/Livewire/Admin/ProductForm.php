@@ -40,7 +40,7 @@ class ProductForm extends Component
     protected $rules = [
         'product.name' => 'required|max:255',
         'product.description' => 'required',
-        'product.price' => 'required|min:100|max:100000000'
+        'product.price' => 'required|max:100000000'
     ];
     
     public function mount()
@@ -146,6 +146,8 @@ class ProductForm extends Component
         if($this->product->wasRecentlyCreated){
             return redirect(route('admin.products.edit', $this->product));
         }
+
+        return redirect(route('admin.products'));
     }
     
     public function render()

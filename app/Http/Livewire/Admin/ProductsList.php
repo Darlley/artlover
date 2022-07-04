@@ -40,6 +40,7 @@ class ProductsList extends Component
                     ? $query->whereNull('published_at')
                     : $query->whereNotNull('published_at');
             })
+            ->orderBy('created_at','desc')
             ->paginate(9);
     }
 
