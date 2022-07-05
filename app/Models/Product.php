@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\{
+    HasMedia,
+    InteractsWithMedia
+};
 
 /**
  * @property-read int $id
@@ -17,10 +21,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property-read Carbon\Carbon $updated_at
  * @package App\Models
  */
-class Product extends Model
+class Product extends Model implements HasMedia
 {
     use HasFactory;
     use SoftDeletes;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'name', 

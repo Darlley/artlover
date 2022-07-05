@@ -4,7 +4,7 @@
     <div class="flex space-x-4 mt-5">
         
         <div class="w-1/3">
-            <div class="grid grid-cols-4 gap-2" x-data>
+            <div class="grid grid-cols-4 gap-2" x-data="">
                 @foreach ($temporaryImages as $temporaryImage)
                 <div wire:key="{{ $temporaryImage->temporaryUrl() }}" class="relative group {{ $loop->first ? 'col-span-4' : 'flex items-center justify-center max-h-20' }}">
                     <img src="{{ $temporaryImage->temporaryUrl() }}" alt="" class="{{$loop->first ? 'max-h-64' : 'h-full' }} w-full cursor-pointer object-cover object-top rounded-lg hover:scale-90 transition-all duration-200">
@@ -52,7 +52,7 @@
                     @endisset
 
                     <div class="rounded-lg overflow-hidden">
-                        <div x-data x-init="Sortablejs.create($el, {
+                        <div x-data="" x-init="Sortablejs.create($el, {
                                 handle: '.cursor-move',
                                 animation: 150,
                                 onSort(variations){
@@ -64,7 +64,7 @@
                             })
                         ">
                             @if(count($variations) <= 0)
-                                <div class="grid grid-cols-4 bg-white opacity-20 pointer-events-none" x-data>
+                                <div class="grid grid-cols-4 bg-white opacity-20 pointer-events-none" x-data="">
                                     <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
                                         <div class="w-12 h-12 bg-gray-100 hover:bg-gray-200 cursor-pointer flex items-center rounded-lg justify-center">
                                             <button type="button" class="w-full h-full" disabled>
@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="rounded-lg overflow-hidden">
-                        <div x-data x-init="Sortablejs.create($el, {
+                        <div x-data="" x-init="Sortablejs.create($el, {
                                 handle: '.cursor-move',
                                 animation: 150,
                                 onSort(shippings){
