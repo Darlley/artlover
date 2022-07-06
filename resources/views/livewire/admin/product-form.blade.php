@@ -4,20 +4,7 @@
     <div class="flex space-x-4 mt-5">
         
         <div class="w-1/3">
-            <div class="grid grid-cols-4 gap-2" x-data="">
-                @foreach ($temporaryImages as $temporaryImage)
-                <div wire:key="{{ $temporaryImage->temporaryUrl() }}" class="relative group {{ $loop->first ? 'col-span-4' : 'flex items-center justify-center max-h-20' }}">
-                    <img src="{{ $temporaryImage->temporaryUrl() }}" alt="" class="{{$loop->first ? 'max-h-64' : 'h-full' }} w-full cursor-pointer object-cover object-top rounded-lg hover:scale-90 transition-all duration-200">
-                    <button wire:click="removeTemporaryImage({{ $loop->index }})" class="z-10 absolute bg-gray-500 opacity-0 hover:bg-red-500 group-hover:opacity-80 rounded-full text-gray-100 p-1 top-1 right-1">
-                        <x-icon.deslike class="w-4 h-4" />
-                    </button>
-                </div>
-                @endforeach
-                <button x-on:click="$refs.inputUpdaloadedFile.click()" class="flex items-center justify-center p-4 bg-opacity-60 bg-white rounded-lg hover:bg-opacity-100 cursor-pointer hover:scale-90 transition-all duration-200 h-full">
-                    <x-icon.plus class="text-gray-500 w-12" />
-                    <input wire:model="temporaryImages" x-ref="inputUpdaloadedFile" type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" multiple class="hidden">
-                </button>
-            </div>
+            <x-products.input-images :medias="$product->getMedia()" :temporaryImages="$temporaryImages" />
         </div>
 
         <div class="w-2/3">
