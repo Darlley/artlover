@@ -29,6 +29,7 @@
                     </div>
                 </div>
 
+                @if($product->exists)
                 <div class="mt-4 mb-2">
                     @if($variations > 0)
                     <div class="grid grid-cols-4 space-y-3 items-center">
@@ -132,12 +133,14 @@
 
                         <x-button type="button" class="py-4 rounded-t-none w-full" wire:click='addShipping'>+ Add Shipping</x-button>
                     </div>
-
                 </div>
+                @endif
 
                 <div class="flex gap-4 mt-4">
+                    @if ($product->exists)
                     <x-button.green class="w-full py-4">Publish</x-button.green>
-                    <x-button class="w-full py-4">Save</x-button>
+                    @endif
+                    <x-button class="w-full py-4">{{ $product->exists ? 'Save' : 'Create' }}</x-button>
                 </div>
             </form>
         </div>

@@ -33,4 +33,8 @@ class Product extends Model implements HasMedia
         'price',
         'published_at'
     ];
+
+    public function Variations(){
+        return $this->hasMany(Variation::class);
+    }
 }

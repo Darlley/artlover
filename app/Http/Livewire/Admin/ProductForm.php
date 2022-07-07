@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Product;
+use App\Models\Variation;
 use Illuminate\support\Str;
 use Livewire\Component;
 use Livewire\TemporaryUploadedFile;
@@ -96,13 +97,15 @@ class ProductForm extends Component
     }
     
     public function addVariation(){
-        $this->variations[] = [
-            'id' => Str::random(),
-            'image' => null,
-            'name' => 'Variation '. count($this->variations) + 1,
-            'price' => null,
-            'quantity' => null,
-        ];
+        // $this->variations[] = [
+        //     'id' => Str::random(),
+        //     'image' => null,
+        //     'name' => 'Variation '. count($this->variations) + 1,
+        //     'price' => null,
+        //     'quantity' => null,
+        // ];
+
+        $this->product->variations()->save(new Variation([]));
     }
 
     public function addShipping(){
