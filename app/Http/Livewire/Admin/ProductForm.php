@@ -51,24 +51,26 @@ class ProductForm extends Component
             'price' => null
         ]);
 
-        $this->variations = collect()->times(3)->map(fn ($index) => [
-            'id' => Str::random(),
-            'image' => null,
-            'name' => 'Variation ' . $index,
-            'price' => null ,
-            'quantity' => null,
-            'position' => $index - 1
-        ])->toArray();
+        $this->variations = $this->product->variations()->get();
 
-        $this->shippings = collect()->times(3)->map(fn ($index) => [
-            'id' => Str::random(),
-            'name' => 'Shipping ' . $index,
-            'standalone_price' => 1000,
-            'withothers_price' => 700,
-            'price' => 1000,
-            'others' => 500,
-            'position' => $index - 1
-        ])->toArray();
+        // $this->variations = collect()->times(3)->map(fn ($index) => [
+        //     'id' => Str::random(),
+        //     'image' => null,
+        //     'name' => 'Variation ' . $index,
+        //     'price' => null ,
+        //     'quantity' => null,
+        //     'position' => $index - 1
+        // ])->toArray();
+
+        // $this->shippings = collect()->times(3)->map(fn ($index) => [
+        //     'id' => Str::random(),
+        //     'name' => 'Shipping ' . $index,
+        //     'standalone_price' => 1000,
+        //     'withothers_price' => 700,
+        //     'price' => 1000,
+        //     'others' => 500,
+        //     'position' => $index - 1
+        // ])->toArray();
 
     }
 
@@ -118,10 +120,11 @@ class ProductForm extends Component
             'others' => null,
         ];
     }
-    
+
     public function removeVariation($id){
         $this->variations = collect($this->variations)->filter(fn ($variation) => $variation['id'] !== $id)->toArray();
     }
+
     public function removeShipping($id){
         $this->shippings = collect($this->shippings)->filter(fn ($shipping) => $shipping['id'] !== $id)->toArray();
     }

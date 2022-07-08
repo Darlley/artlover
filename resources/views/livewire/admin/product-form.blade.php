@@ -31,7 +31,7 @@
 
                 @if($product->exists)
                 <div class="mt-4 mb-2">
-                    @if($variations > 0)
+                    @if(count($variations) > 0)
                     <div class="grid grid-cols-4 space-y-3 items-center">
                         <h3 class="text-gray-800 text-xl font-bold col-span-2">Variations</h3>
                         <h4 class="text-gray-700 text-xl">Price</h4>
