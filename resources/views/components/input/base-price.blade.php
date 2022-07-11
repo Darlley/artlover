@@ -2,7 +2,7 @@
     'padding' => 'p-0'
 ])
 <div x-data="basePrice(@entangle($attributes->wire('model')))" x-init="mounted()">
-    <input {{ $attributes->except(['wire:model','wire:model.defer']) }} 
+    <input {{ $attributes->whereDoesntStartWith('wire:model') }} 
         type="text"
         placeholder="$ Price"
         id="price" 

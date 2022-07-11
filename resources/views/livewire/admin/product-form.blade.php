@@ -51,7 +51,7 @@
                                 }
                             })
                         ">
-                            @if(count($variations) <= 0)
+                            @if(count($product->variations) <= 0)
                                 <div class="grid grid-cols-4 bg-white opacity-20 pointer-events-none" x-data="">
                                     <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
                                         <div class="w-12 h-12 bg-gray-100 hover:bg-gray-200 cursor-pointer flex items-center rounded-lg justify-center">
@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                             @endif
-                            @foreach ($variations as $index => $variation)
+                            @foreach ($product->variations as $index => $variation)
                                 <livewire:products.variation-form
                                     wire:key="variation-form-{{ $variation['id'] }}"
                                     :variation="$variation"
@@ -140,7 +140,7 @@
                     @if ($product->exists)
                     <x-button.green class="w-full py-4">Publish</x-button.green>
                     @endif
-                    <x-button class="w-full py-4">{{ $product->exists ? 'Save' : 'Create' }}</x-button>
+                    <x-button class="w-full py-4" >{{ $product->exists ? 'Save' : 'Create' }}</x-button>
                 </div>
             </form>
         </div>

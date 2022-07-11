@@ -76,14 +76,16 @@ class ProductForm extends Component
 
     public function updateVariationsPositions($variationsOrder){
 
-        $newVariations = [];
-        foreach($variationsOrder as $index => $id){
-            $variation = collect($this->variations)->where('id',$id)->first();
-            $variation['position'] = $index;
-            $newVariations[] = $variation;
-        }
+        // $newVariations = [];
+        // foreach($variationsOrder as $index => $id){
+        //     $variation = collect($this->variations)->where('id',$id)->first();
+        //     $variation['position'] = $index;
+        //     $newVariations[] = $variation;
+        // }
 
-        $this->variations = $newVariations;
+        // $this->variations = $newVariations;
+
+        dd('updated');
     }
 
     public function updateShippingPositions($shippingsOrder){
@@ -108,6 +110,7 @@ class ProductForm extends Component
         // ];
 
         $this->product->variations()->save(new Variation([]));
+        $this->product->refresh();
     }
 
     public function addShipping(){
@@ -122,7 +125,10 @@ class ProductForm extends Component
     }
 
     public function removeVariation($id){
-        $this->variations = collect($this->variations)->filter(fn ($variation) => $variation['id'] !== $id)->toArray();
+        // $this->variations = collect($this->variations)->filter(fn ($variation) => $variation['id'] !== $id)->toArray();
+        $this->product->variations()->find($id)->delete();
+        $this->product->refresh();
+        return back();
     }
 
     public function removeShipping($id){
