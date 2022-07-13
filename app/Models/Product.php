@@ -16,6 +16,7 @@ use Spatie\MediaLibrary\{
  * @property-read string $description
  * @property-read int $price
  * @property-read string $status
+ * @property-read Collection|Variation[] $variations 
  * @property-read Carbon\Carbon $published_at
  * @property-read Carbon\Carbon $created_at
  * @property-read Carbon\Carbon $updated_at
@@ -35,6 +36,6 @@ class Product extends Model implements HasMedia
     ];
 
     public function Variations(){
-        return $this->hasMany(Variation::class);
+        return $this->hasMany(Variation::class)->orderBy('position');
     }
 }

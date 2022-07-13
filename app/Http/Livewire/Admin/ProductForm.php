@@ -46,58 +46,35 @@ class ProductForm extends Component
     
     public function mount()
     {
-        
         $this->product ??= new Product([
             'price' => null
         ]);
-
-        $this->variations = $this->product->variations()->get();
-
-        // $this->variations = collect()->times(3)->map(fn ($index) => [
-        //     'id' => Str::random(),
-        //     'image' => null,
-        //     'name' => 'Variation ' . $index,
-        //     'price' => null ,
-        //     'quantity' => null,
-        //     'position' => $index - 1
-        // ])->toArray();
-
-        // $this->shippings = collect()->times(3)->map(fn ($index) => [
-        //     'id' => Str::random(),
-        //     'name' => 'Shipping ' . $index,
-        //     'standalone_price' => 1000,
-        //     'withothers_price' => 700,
-        //     'price' => 1000,
-        //     'others' => 500,
-        //     'position' => $index - 1
-        // ])->toArray();
-
     }
 
-    public function updateVariationsPositions($variationsOrder){
+    public function updateVariationsPositions($variationsOrder)
+    {
+        foreach($this->product->variations as $variation){
+            $position = array_search($variation->id, $variationsOrder);
+            $variation->fill(compact('position'))->save();
+        }
+        $this->product->refresh();
 
-        // $newVariations = [];
-        // foreach($variationsOrder as $index => $id){
-        //     $variation = collect($this->variations)->where('id',$id)->first();
-        //     $variation['position'] = $index;
-        //     $newVariations[] = $variation;
-        // }
-
-        // $this->variations = $newVariations;
-
-        dd('updated');
     }
 
     public function updateShippingPositions($shippingsOrder){
 
-        $newShippings = [];
-        foreach($shippingsOrder as $index => $id){
-            $shipping = collect($this->shippings)->where('id',$id)->first();
-            $shipping['position'] = $index;
-            $newShippings[] = $shipping;
-        }
+        // $newShippings = [];
+        // foreach($shippingsOrder as $index => $id){
+        //     $shipping = collect($this->shippings)->where('id',$id)->first();
+        //     $shipping['position'] = $index;
+        //     $newShippings[] = $shipping;
+        // }
 
-        $this->shippings = $newShippings;
+        // $this->shippings = $newShippings;
+
+        foreach($this->products->variations as $position){
+
+        }
     }
     
     public function addVariation(){
@@ -109,7 +86,9 @@ class ProductForm extends Component
         //     'quantity' => null,
         // ];
 
-        $this->product->variations()->save(new Variation([]));
+        $this->product->variations()->save(new Variation([
+            'position' => $this->product->variations()->count()
+        ]));
         $this->product->refresh();
     }
 

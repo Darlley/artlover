@@ -2,12 +2,12 @@
     <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
         <div class="w-12 h-12 bg-gray-100 hover:bg-gray-200 cursor-pointer flex items-center rounded-lg justify-center">
             <button type="button" class="w-full h-full" x-on:click="$refs.addImageVariation.click()">
-                @if(isset($variation['image']))
-                    <img src="{{ $variation['image']->temporaryUrl() }}" class="w-full h-full object-cover rounded-lg" alt="">
+                @if($image)
+                    {{ $image->img('', [ 'class' => 'w-full h-full object-cover rounded-lg' ]) }}
                 @else
                     <x-icon.camera class="w-full h-full p-2 text-gray-400" />
                 @endif
-                <input wire:model.debounce.500='variation.image' x-ref="addImageVariation" type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" class="hidden">
+                <input wire:model='image' x-ref="addImageVariation" type="file" accept="image/png, image/jpg, image/jpeg, image/svg, image/webp" class="hidden">
             </button>
         </div>
         <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name" wire:model.debounce.500='variation.name' />

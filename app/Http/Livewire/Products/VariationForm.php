@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Products;
 
 use Livewire\Component;
+use Livewire\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 
 class VariationForm extends Component
@@ -10,6 +11,7 @@ class VariationForm extends Component
     use WithFileUploads;
 
     public $variation;
+    public $image;
 
     protected $rules = [
         'variation.name' => 'required', 
@@ -23,8 +25,15 @@ class VariationForm extends Component
         'variation.quantity' => 'A quantidade da variação é obrigatoria :(',
     ];
 
-    public function updated($name, $value) {
+    public function mount(){
+        $this->image = $this->variation->getFirstMedia();
+    }
+
+    public function updated() {
         $this->variation->save();
+        if($this->image instanceof TemporaryUploadedFile){
+            $this->image = $this->variation->addMedia($this->image->getRealPath())->toMediaCollection(); 
+        }
     }
 
     public function render()
