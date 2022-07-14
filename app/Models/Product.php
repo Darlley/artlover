@@ -38,4 +38,7 @@ class Product extends Model implements HasMedia
     public function Variations(){
         return $this->hasMany(Variation::class)->orderBy('position');
     }
+    public function Shippings(){
+        return $this->hasMany(Shipping::class)->orderBy('position');
+    }
 }

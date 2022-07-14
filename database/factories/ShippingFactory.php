@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Variation>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Shipping>
  */
-class VariationFactory extends Factory
+class ShippingFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,9 @@ class VariationFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->words(rand(3,5), true),
-            'price' => $this->faker->randomNumber(4,true),
-            'quantity' => $this->faker->numberBetween(0, 100),
+            'name' => $this->faker->company, 
+            'santandalone_price' => rand(1000,10000), 
+            'pack_price' =>rand(500,7500),
             'position' => null,
             'product_id' => ProductFactory::new()
         ];

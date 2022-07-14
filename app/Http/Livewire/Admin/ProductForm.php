@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Product;
+use App\Models\Shipping;
 use App\Models\Variation;
 use Illuminate\support\Str;
 use Livewire\Component;
@@ -78,14 +79,6 @@ class ProductForm extends Component
     }
     
     public function addVariation(){
-        // $this->variations[] = [
-        //     'id' => Str::random(),
-        //     'image' => null,
-        //     'name' => 'Variation '. count($this->variations) + 1,
-        //     'price' => null,
-        //     'quantity' => null,
-        // ];
-
         $this->product->variations()->save(new Variation([
             'position' => $this->product->variations()->count()
         ]));
@@ -93,14 +86,10 @@ class ProductForm extends Component
     }
 
     public function addShipping(){
-        $this->shippings[] = [
-            'id' => Str::random(),
-            'name' => 'Shipping '. count($this->shippings) + 1,
-            'standalone_price' => 1000,
-            'withothers_price' => 700,
-            'price' => null,
-            'others' => null,
-        ];
+        $this->product->shippings()->save(new Shipping([
+            'position' => $this->product->shippings()->count()
+        ]));
+        $this->product->refresh();
     }
 
     public function removeVariation($id){
@@ -111,7 +100,10 @@ class ProductForm extends Component
     }
 
     public function removeShipping($id){
-        $this->shippings = collect($this->shippings)->filter(fn ($shipping) => $shipping['id'] !== $id)->toArray();
+        // $this->shippings = collect($this->shippings)->filter(fn ($shipping) => $shipping['id'] !== $id)->toArray();
+        $this->product->shippings()->find($id)->delete();
+        $this->product->refresh();
+        return back();
     }
 
     public function removeTemporaryImage($image){

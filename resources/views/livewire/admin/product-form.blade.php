@@ -104,7 +104,7 @@
                                 }
                             }) 
                         ">
-                            @if (count($shippings) <= 0)
+                            @if (count($product->shippings) <= 0)
                                 <div class="grid grid-cols-4 bg-white pointer-events-none opacity-20">
                                     <div class="col-span-2 flex items-center px-2 py-1 space-x-5">
                                         <x-input type="text" class="bg-transparent outline-none focus:outline-none p-0 border-0 focus:ring-0" placeholder="Name e.g. Fedex" />
@@ -123,7 +123,7 @@
                                     </div>
                                 </div>
                             @endif
-                            @foreach($shippings as $shipping)
+                            @foreach($product->shippings as $shipping)
                                 <livewire:products.shipping-form 
                                     wire:key="shipping-form-{{ $shipping['id'] }}"
                                     :shipping="$shipping" 
