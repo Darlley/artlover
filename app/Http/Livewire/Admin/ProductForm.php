@@ -63,19 +63,11 @@ class ProductForm extends Component
     }
 
     public function updateShippingPositions($shippingsOrder){
-
-        // $newShippings = [];
-        // foreach($shippingsOrder as $index => $id){
-        //     $shipping = collect($this->shippings)->where('id',$id)->first();
-        //     $shipping['position'] = $index;
-        //     $newShippings[] = $shipping;
-        // }
-
-        // $this->shippings = $newShippings;
-
-        foreach($this->products->variations as $position){
-
+        foreach($this->product->shippings as $shipping){
+            $position = array_search($shipping->id, $shippingsOrder);
+            $shipping->fill(compact('position'))->save();
         }
+        $this->product->refresh();
     }
     
     public function addVariation(){
