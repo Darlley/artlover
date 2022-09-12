@@ -22,7 +22,10 @@
                     </div>
 
                     <x-input type="text" placeholder="Categories" wire:model.defer='product.categories'/>
-                    
+
+                    {{-- <x-products.input-categories /> --}}
+                    <livewire:products.input-categories :product="$product" />
+
                     <div>
                         <x-input.price wire:model.defer='product.price'/>
                         <x-input-error for="product.price" />
