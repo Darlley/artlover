@@ -12,6 +12,8 @@ class InputCategories extends Component
     public $product;
     public $isOpen;
     public $categories = [];
+    
+    protected $rules = [];
 
     public function mount($product){
         // $this->product = $product;
@@ -25,9 +27,6 @@ class InputCategories extends Component
         //     'name' => '',
         // ];
     }
-
-    // public function getCategoriesProperty(){
-    // }
 
     public function render()
     {
