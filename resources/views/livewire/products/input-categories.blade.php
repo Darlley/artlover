@@ -9,15 +9,16 @@
         <div class="w-max flex flex-col">
             <div class="bg-white rounded-md overflow-hidden font-bold text-gray-600 min-w-[320px]">
                 <ul class="flex flex-col">
-                    @foreach ($categories as $category)
+                    @foreach ($this->categories as $index => $category)
                     <li class="flex gap-2">
                         <a class="flex py-4 px-8 w-full text-cyan-500 bg-blue-100 hover:bg-blue-200 gap-8 cursor-pointer justify-between">
                             <div class="flex items-center gap-1">
                                 <x-icon.check class="w-6" />
                                 <livewire:categories.input-name :category="$category" :key="'category-input-'.$category->id" />
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <x-icon.trash class="text-red-500 w-5 h-5 opacity-80 hover:opacity-100 ml-auto" />
+                                </div>
+                                <div class="flex items-center gap-1">
+                                {{-- <input type="text" wire:model="categories.{{ $index }}.name" /> --}}
+                                <x-icon.trash class="text-red-500 w-5 h-5 opacity-80 hover:opacity-100 ml-auto" wire:click='removeCategory({{ $category->id }})' />
                             </div>
                         </a>
                     </li>

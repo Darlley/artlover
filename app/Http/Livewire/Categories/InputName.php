@@ -11,6 +11,11 @@ class InputName extends Component
     protected $rules = [
         'category.name' => 'required|string|max:32'
     ];
+
+    public function updated(){
+        $this->validate();
+        $this->category->save();
+    }
     
     public function render()
     {

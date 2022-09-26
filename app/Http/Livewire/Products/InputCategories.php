@@ -11,21 +11,30 @@ class InputCategories extends Component
 {
     public $product;
     public $isOpen;
-    public $categories = [];
+    // public $categories = [];
     
     protected $rules = [];
 
     public function mount($product){
         // $this->product = $product;
         $this->isOpen = false;
-        $this->categories = Category::all();
+        // $this->categories = Category::all();
     }
 
     public function addCategory(){
-        // $this->categories[] = [
-        //     'id' => Str::random(),
-        //     'name' => '',
-        // ];
+        Category::create([
+            'name' => 'New Category'
+        ]);
+
+        // $this->categories = Category::all();
+    }
+
+    public function removeCategory(Category $category){
+        $category->delete();
+    }
+
+    public function getCategoriesProperty(){
+        return Category::all();
     }
 
     public function render()

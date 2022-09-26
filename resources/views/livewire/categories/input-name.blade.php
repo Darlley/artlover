@@ -1,1 +1,1 @@
-<input type="text" class="max-w-[120px] rounded-lg bg-transparent border-blue-300 px-2 p-1" wire.model="category" />
+<input type="text" class="w-full bg-transparent border-none px-2 p-1 cursor-text rounded-lg focus:ring-cyan-500" wire:model="category.name" />
