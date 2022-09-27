@@ -12,6 +12,7 @@ class InputCategories extends Component
     public $product;
     public $isOpen;
     // public $categories = [];
+    public $selectedCategoriesId = [];
     
     protected $rules = [];
 
@@ -35,6 +36,10 @@ class InputCategories extends Component
 
     public function getCategoriesProperty(){
         return Category::all();
+    }
+
+    public function isSelectd(Category $category){
+        return Collect($this->selectedCategoriesId)->contains($category->id);
     }
 
     public function render()
