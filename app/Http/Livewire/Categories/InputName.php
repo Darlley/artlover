@@ -16,7 +16,7 @@ class InputName extends Component
         $this->validate();
         $this->category->save();
     }
-    
+
     public function render()
     {
         return view('livewire.categories.input-name');

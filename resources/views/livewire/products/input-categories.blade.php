@@ -1,6 +1,10 @@
-<div wire:poll.1s>
+<div>
     <button wire:click.prevent="$toggle('isOpen')" class="rounded-lg shadow-sm border py-4 px-6 flex w-full justify-between bg-white hover:bg-gray-50 hover:cursor-pointer">
-        <span class="opacity-50 select-none">Input categories working</span>
+        @if($product->categories->isEmpty())
+        <span class="opacity-50 select-none">Select Categories</span>
+        @else
+        <span class="opacity-50 select-none text-gray-800 capitalize max-w-md overflow-hidden line-clamp-1">{{ $product->categories->map->name->join(', ') }}</span>
+        @endif
         <x-icon.plus class="w-4" />
     </button>
 
@@ -11,16 +15,13 @@
                 <ul class="flex flex-col">
                     @foreach ($this->categories as $index => $category)
                     <li class="flex gap-2">
-                        <a class="flex py-4 px-8 w-full gap-8 cursor-pointer justify-between border-b border-transparent {{ $this->isSelectd($category) ? 'bg-cyan-100 hover:bg-cyan-200 text-cyan-500 border-cyan-300' : 'bg-blue-50 hover:bg-blue-100' }}">
+                        <label for="category-{{ $category->id }}" class="flex py-4 px-8 w-full gap-8 cursor-pointer justify-between border-b border-transparent {{ $this->isSelectd($category) ? 'bg-indigo-100 hover:bg-indigo-200 text-indigo-500 border-indigo-300' : 'bg-blue-50 hover:bg-blue-100' }}">
                             <div class="flex items-center gap-1">
-                                <input type="checkbox" wire:model='selectedCategoriesId' value="{{ $category->id }}" class="outline-none focus:ring-0" />
+                                <input id="category-{{ $category->id }}" type="checkbox" wire:model='selectedCategoriesId' value="{{ $category->id }}" class="outline-none focus:ring-0" />
                                 <livewire:categories.input-name :category="$category" :key="'category-input-'.$category->id" />
-                                </div>
-                                <div class="flex items-center gap-1">
-                                {{-- <input type="text" wire:model="categories.{{ $index }}.name" /> --}}
                                 <x-icon.trash class="text-red-500 w-5 h-5 opacity-80 hover:opacity-100 ml-auto" wire:click='removeCategory({{ $category->id }})' />
                             </div>
-                        </a>
+                        </label>
                     </li>
                     @endforeach
                 </ul>
@@ -32,15 +33,14 @@
             </div>
             
             <div class="flex justify-center w-full text-center mt-4 gap-2">
-                <button wire:click.prevent="$toggle('isOpen')" class="p-2 w-full bg-white rounded-md text-cyan-500 font-bold opacity-90 hover:opacity-100">
+                <button wire:click.prevent="$toggle('isOpen')" class="p-2 w-full bg-white rounded-md text-indigo-500 font-bold opacity-90 hover:opacity-100">
                     Cancelar
                 </button>
-                <button wire:click.prevent="$toggle('isOpen')" class="p-2 w-full bg-cyan-500 rounded-md text-white font-bold opacity-90 hover:opacity-100">
+                <button wire:click.prevent='emitSelectedIds' type="button" class="p-2 w-full bg-indigo-500 rounded-md text-white font-bold opacity-90 hover:opacity-100">
                     Salvar
                 </button>
             </div>
         </div>
     </div>
     @endif
-
 </div>

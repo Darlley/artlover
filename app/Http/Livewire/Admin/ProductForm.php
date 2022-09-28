@@ -125,14 +125,15 @@ class ProductForm extends Component
         return redirect(route('admin.products'));
     }
     
-    public function render()
-    {
-        return view('livewire.admin.product-form')->layout('layouts.admin');
-    }
-
     public function addImages(){
         collect($this->temporaryImages)->each(function (TemporaryUploadedFile $image){
             $this->product->addMedia($image->getRealPath())->toMediaCollection();
         });
     }
+
+    public function render()
+    {
+        return view('livewire.admin.product-form')->layout('layouts.admin');
+    }
+
 }

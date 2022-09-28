@@ -24,7 +24,7 @@
                     <x-input type="text" placeholder="Categories" wire:model.defer='product.categories'/>
 
                     {{-- <x-products.input-categories /> --}}
-                    <livewire:products.input-categories :product="$product" />
+                    <livewire:products.input-categories :key='$product->updated_at->toDateTimeString()' :product="$product" />
 
                     <div>
                         <x-input.price wire:model.defer='product.price'/>

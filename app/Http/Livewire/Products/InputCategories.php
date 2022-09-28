@@ -9,17 +9,19 @@ use Illuminate\Support\Str;
 
 class InputCategories extends Component
 {
-    public $product;
     public $isOpen;
-    // public $categories = [];
+    public Product $product;
     public $selectedCategoriesId = [];
     
     protected $rules = [];
 
     public function mount($product){
+        $this->product = $product;
         // $this->product = $product;
         $this->isOpen = false;
         // $this->categories = Category::all();
+
+        $this->selectedCategoriesId = $this->product->categories->map->id->toArray();
     }
 
     public function addCategory(){
@@ -40,6 +42,15 @@ class InputCategories extends Component
 
     public function isSelectd(Category $category){
         return Collect($this->selectedCategoriesId)->contains($category->id);
+    }
+
+    public function emitSelectedIds()
+    {
+        if($this->selectedCategoriesId > 0){
+            $this->product->categories()->sync($this->selectedCategoriesId);
+            $this->product->refresh()->with('categories');
+        }
+        $this->isOpen = false;
     }
 
     public function render()

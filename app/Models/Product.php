@@ -11,15 +11,16 @@ use Spatie\MediaLibrary\{
 };
 
 /**
- * @property-read int $id
- * @property-read string $name
- * @property-read string $description
- * @property-read int $price
- * @property-read string $status
+ * @property int $id
+ * @property string $name
+ * @property string $description
+ * @property int $price
  * @property-read Collection|Variation[] $variations 
- * @property-read Carbon\Carbon $published_at
- * @property-read Carbon\Carbon $created_at
- * @property-read Carbon\Carbon $updated_at
+ * @property-read Collection|Shipping[] $shippings 
+ * @property-read Collection|Category[] $categories
+ * @property Carbon\Carbon $published_at
+ * @property Carbon\Carbon $created_at
+ * @property Carbon\Carbon $updated_at
  * @package App\Models
  */
 class Product extends Model implements HasMedia
@@ -38,7 +39,12 @@ class Product extends Model implements HasMedia
     public function Variations(){
         return $this->hasMany(Variation::class)->orderBy('position');
     }
+
     public function Shippings(){
         return $this->hasMany(Shipping::class)->orderBy('position');
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
     }
 }

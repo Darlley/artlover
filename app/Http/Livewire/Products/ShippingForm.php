@@ -22,6 +22,11 @@ class ShippingForm extends Component
         $this->shipping->save();
     }
 
+    public function emitSelectedIds()
+    {
+        $this->emit("onSelectdCategoryIds", $this->selectedCategoriesId);
+    }
+
     public function render()
     {
         return view('livewire.products.shipping-form');
