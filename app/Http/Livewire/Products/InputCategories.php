@@ -46,10 +46,9 @@ class InputCategories extends Component
 
     public function emitSelectedIds()
     {
-        if($this->selectedCategoriesId > 0){
-            $this->product->categories()->sync($this->selectedCategoriesId);
-            $this->product->refresh()->with('categories');
-        }
+        $ids = Category::find($this->selectedCategoriesId)->map->id->toArray();
+        $this->product->categories()->sync($ids);
+        $this->product->refresh()->with('categories');
         $this->isOpen = false;
     }
 
