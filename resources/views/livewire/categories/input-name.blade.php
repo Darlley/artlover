@@ -1,0 +1,1 @@
+<input type="text" class="w-full bg-transparent border-none px-2 p-1 cursor-text rounded-lg focus:ring-cyan-500" wire:model="category.name" />

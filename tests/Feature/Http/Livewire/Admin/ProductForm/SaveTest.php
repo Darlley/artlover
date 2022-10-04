@@ -3,6 +3,8 @@
 use App\Http\Livewire\Admin\ProductForm;
 use App\Models\Product;
 use App\Models\User;
+
+use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 use Illuminate\Support\Str;
 use function Pest\Laravel\actingAs;
@@ -112,6 +114,29 @@ it('keeps status if already published');
 // it('should contain the name');
 // it('should contain the description');
 // it('if it has variation it must contain an image');
+it('can store images on save', function(){
+    $product = Product::factory()->createOne();
+    $images = [
+        UploadedFile::fake()->image('image1.jpg', 600, 400),
+        UploadedFile::fake()->image('image2.jpg', 600, 400),
+    ];
+
+    /** @var Product $product */
+    $product = livewire(ProductForm::class)
+        ->set('temporaryImages', $images)
+        ->set('product.name', $product->name)
+        ->set('product.description', $product->description)
+        ->set('product.price', $product->price)
+        ->call('save')
+        ->get('product');
+    
+    // dd($product);
+    expect($product->getMedia()->count())->toBe(2);
+});
+
+// it('should contain the name');
+// it('should contain the description');
+// it('if it has variation it must contain an image'); 
 // it('if it has variation it must contain its name');
 // it('if it has variation it must contain its price');
 // it('if it has variation it must contain its quantity');
