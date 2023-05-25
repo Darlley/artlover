@@ -351,16 +351,20 @@
                 <x-button 
                     class="gap-2 font-bold w-full border border-transparent uppercase rounded-t-none py-4" 
                     x-data="{ 
-                        async confirmPayment($wire) {
+                        async getStripeSession($wire) {
                             try {
                                 const stripeSession = await $wire.confirmPayment();
                                 window.location.replace(stripeSession.url);
+                                {{-- const { error } = await stripe.redirectToCheckout({sessionId: stripeSession.id})
+                                if(error){
+                                    alert(error.message);
+                                } --}}
                             } catch (error) {
                                 console.error(error)
                             }
                         }
                     }"
-                    @click="confirmPayment($wire)"
+                    @click="getStripeSession($wire)"
                 >
                     <x-icon.lock-closed class="w-6 h-6 text-green-300" />
                     <span>Confirm payment</span>

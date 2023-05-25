@@ -10,9 +10,7 @@ class CheckoutPage extends Component
 {
     public function confirmPayment()
     {
-        
         $checkout = Stripe::createCheckoutSession(new Customer());
-        dd("confirm payment", $checkout->asStripeCheckoutSession());
 
         return [
             "id" => $checkout->asStripeCheckoutSession()->id,
