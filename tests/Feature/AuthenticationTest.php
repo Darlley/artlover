@@ -2,7 +2,6 @@
 
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 test("test_login_screen_can_be_rendered")
 ->get('/login')
